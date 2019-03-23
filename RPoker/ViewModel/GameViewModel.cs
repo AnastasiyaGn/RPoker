@@ -92,12 +92,12 @@ namespace ViewModel
 			set { this.RaiseAndSetIfChanged(ref _startCash, value, nameof(StartCash)); }
 		}
 
-		public PlayerViewModel FirstPlayer { get; set; }
-		public PlayerViewModel SecondPlayer { get; set; }
-		public PlayerViewModel ThirdPlayer { get; set; }
-		public PlayerViewModel FourthPlayer { get; set; }
-		public PlayerViewModel FifthPlayer { get; set; }
-		public PlayerViewModel SixthPlayer { get; set; }
+		public PlayerViewModel FirstPlayer { get; }
+		public PlayerViewModel SecondPlayer { get; }
+		public PlayerViewModel ThirdPlayer { get; }
+		public PlayerViewModel FourthPlayer { get; }
+		public PlayerViewModel FifthPlayer { get; }
+		public PlayerViewModel SixthPlayer { get; }
 
 		public Card FlopCard1
 		{
