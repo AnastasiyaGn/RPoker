@@ -43,10 +43,37 @@ namespace Model.Cards
 		public bool IsHide { get; set; }
 
 
+
 		public override string ToString()
 		{
-			return "Карта";
+			return $"{RankMapper[Rank]}{SuitMapper[Suit]}";
 		}
+
+
+		public static Dictionary<CardRank, string> RankMapper = new Dictionary<CardRank, string>()
+		{
+			{ CardRank.Two,		"2" },
+			{ CardRank.Three, "3" },
+			{ CardRank.Four,	"4" },
+			{ CardRank.Five,	"5" },
+			{ CardRank.Six,		"6" },
+			{ CardRank.Seven, "7" },
+			{ CardRank.Eight, "8" },
+			{ CardRank.Nine,	"9" },
+			{ CardRank.Ten,		"10" },
+			{ CardRank.Jack,	"J" },
+			{ CardRank.Queen, "Q" },
+			{ CardRank.King,	"K" },
+			{ CardRank.Ace,		"A"},
+		};
+
+		public static Dictionary<CardSuit, string> SuitMapper = new Dictionary<CardSuit, string>()
+		{
+			{ CardSuit.Club,		"C" },
+			{ CardSuit.Diamond, "D" },
+			{ CardSuit.Hearth,	"H" },
+			{ CardSuit.Spade,		"S" }
+		};
 
 	}
 }
