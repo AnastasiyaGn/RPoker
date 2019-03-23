@@ -6,28 +6,9 @@
         xmlns:local="clr-namespace:View"
         mc:Ignorable="d"
         Title="RPoker" Height="450" Width="800">
-    <Window.Resources>
-        <DataTemplate x:Key="Template1">
-            <Image Source="Resources/cardDiamondsA.png"/>
-        </DataTemplate>
+	<Window.Resources>
 
-        <DataTemplate x:Key="Template2">
-            <Image Source="Resources/cardDiamondsc10.png" />
-        </DataTemplate>
-
-        <DataTemplate x:Key="Template3">
-            <Image Source="Resources/cardDiamondsc2.png" />
-        </DataTemplate>
-
-        <local:BalanceTypesTemplateSelector x:Key="CardTemplateSelector"
-                                           Template1="{StaticResource Template1}"
-                                           Template2="{StaticResource Template2}"
-                                           Template3="{StaticResource Template3}"/>
-
-    </Window.Resources>
-    <Grid>
-        <ContentControl Content="{Binding Path=Card}" 
-                        ContentTemplateSelector="{StaticResource CardTemplateSelector}">
-        </ContentControl>
-    </Grid>
+	</Window.Resources>
+	<Grid>
+	</Grid>
 </Window>
