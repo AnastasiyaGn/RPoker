@@ -149,6 +149,19 @@
     <Resource Include="Resources\cardDiamondsc9.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\cardClubsA.png" />
+    <Resource Include="Resources\cardClubsc10.png" />
+    <Resource Include="Resources\cardClubsc2.png" />
+    <Resource Include="Resources\cardClubsc3.png" />
+    <Resource Include="Resources\cardClubsc4.png" />
+    <Resource Include="Resources\cardClubsc5.png" />
+    <Resource Include="Resources\cardClubsc6.png" />
+    <Resource Include="Resources\cardClubsc7.png" />
+    <Resource Include="Resources\cardClubsc8.png" />
+    <Resource Include="Resources\cardClubsc9.png" />
+    <Resource Include="Resources\cardClubsJ.png" />
+    <Resource Include="Resources\cardClubsK.png" />
+    <Resource Include="Resources\cardClubsQ.png" />
     <Resource Include="Resources\cardDiamondsJ.png" />
     <Resource Include="Resources\cardDiamondsK.png" />
     <Resource Include="Resources\cardDiamondsQ.png" />
