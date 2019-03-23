@@ -7,15 +7,15 @@ namespace Model.Cards
 
 	public enum Combination
 	{
-		HighCard,
-		Pair,
-		TwoPair,
-		ThreeOfKind,
-		Straight,
-		FullHouse,
-		Kape,
-		StraightFlush,
-		RoyalFlush
+		HighCard = 1,
+		Pair = 2,
+		TwoPair = 3,
+		ThreeOfKind = 4,
+		Straight = 5,
+		FullHouse = 6,
+		Kape = 7,
+		StraightFlush = 8,
+		RoyalFlush = 9
 	};
 
 	public static class CombinationChecker
