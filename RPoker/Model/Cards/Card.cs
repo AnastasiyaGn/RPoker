@@ -33,7 +33,7 @@ namespace Model.Cards
 	{
 		public Card(CardSuit suit, CardRank rank)
 		{
-
+			
 		}
 
 		private CardSuit Suit { get; set; }
@@ -43,7 +43,7 @@ namespace Model.Cards
 
 		public override string ToString()
 		{
-			return string.Empty;
+			return "Карта";
 		}
 
 	}
