@@ -14,14 +14,37 @@ using System.Windows.Shapes;
 
 namespace View
 {
-	/// <summary>
-	/// Логика взаимодействия для GameWindow.xaml
-	/// </summary>
-	public partial class GameWindow : Window
+    /// <summary>
+    /// Логика взаимодействия для GameWindow.xaml
+    /// </summary>
+    public partial class GameWindow : Window
 	{
-		public GameWindow()
+        public GameWindow()
 		{
 			InitializeComponent();
 		}
-	}
+    }
+    public class BalanceTypesTemplateSelector : DataTemplateSelector
+    {
+        public DataTemplate Template1 { get; set; }
+        public DataTemplate Template2 { get; set; }
+        public DataTemplate Template3 { get; set; }
+
+        public override DataTemplate SelectTemplate(object item, DependencyObject container)
+        {
+            //var type = item.ToString();
+            return Template2;
+            //switch (type)
+            //{
+            //    case "t1":
+            //        return Template1;
+            //    case "t2":
+            //        return Template1;
+            //    case "t3":
+            //        return Template3;
+            //    default:
+            //        throw new NotSupportedException();
+            //}
+        }
+    }
 }
