@@ -37,24 +37,8 @@ namespace ViewModel
 			_players.Add(FifthPlayer);
 			_players.Add(SixthPlayer);
 
+
 			
-			//FirstPlayer.PlayerState.FirstCard = _deck.GetRandomCard();
-			//FirstPlayer.PlayerState.SecondCard = _deck.GetRandomCard();
-
-			//SecondPlayer.PlayerState.FirstCard = _deck.GetRandomCard();
-			//SecondPlayer.PlayerState.SecondCard = _deck.GetRandomCard();
-
-			//ThirdPlayer.PlayerState.FirstCard = _deck.GetRandomCard();
-			//ThirdPlayer.PlayerState.SecondCard = _deck.GetRandomCard();
-
-			//FourthPlayer.PlayerState.FirstCard = _deck.GetRandomCard();
-			//FourthPlayer.PlayerState.SecondCard = _deck.GetRandomCard();
-
-			//FifthPlayer.PlayerState.FirstCard = _deck.GetRandomCard();
-			//FifthPlayer.PlayerState.SecondCard = _deck.GetRandomCard();
-
-			//SixthPlayer.PlayerState.FirstCard = _deck.GetRandomCard();
-			//SixthPlayer.PlayerState.SecondCard = _deck.GetRandomCard();
 		}
 
 		#region Private fields
@@ -132,7 +116,32 @@ namespace ViewModel
 
 		#endregion
 
+		#region Public methods
 
+		public void DealCards()
+		{
+			FirstPlayer.PlayerState.FirstCard = _deck.GetRandomCard();
+			FirstPlayer.PlayerState.SecondCard = _deck.GetRandomCard();
+			FirstPlayer.PlayerState.FirstCard.IsHide = false;
+			FirstPlayer.PlayerState.SecondCard.IsHide = false;
+
+			SecondPlayer.PlayerState.FirstCard = _deck.GetRandomCard();
+			SecondPlayer.PlayerState.SecondCard = _deck.GetRandomCard();
+
+			ThirdPlayer.PlayerState.FirstCard = _deck.GetRandomCard();
+			ThirdPlayer.PlayerState.SecondCard = _deck.GetRandomCard();
+
+			FourthPlayer.PlayerState.FirstCard = _deck.GetRandomCard();
+			FourthPlayer.PlayerState.SecondCard = _deck.GetRandomCard();
+
+			FifthPlayer.PlayerState.FirstCard = _deck.GetRandomCard();
+			FifthPlayer.PlayerState.SecondCard = _deck.GetRandomCard();
+
+			SixthPlayer.PlayerState.FirstCard = _deck.GetRandomCard();
+			SixthPlayer.PlayerState.SecondCard = _deck.GetRandomCard();
+		}
+
+		#endregion
 
 	}
 }
