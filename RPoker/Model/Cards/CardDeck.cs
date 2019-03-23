@@ -13,6 +13,7 @@ namespace Model.Cards
 		{
 			_cards = new List<Card>(AllDeck);
 			_generator = new Random();
+			_discardedCards = new List<int>();
 			Shuffle();
 			BuildMap();
 		}
