@@ -5,9 +5,9 @@ using ReactiveUI;
 
 namespace Model.Players
 {
-	public class Player : ReactiveObject
+	public class PlayerState : ReactiveObject
 	{
-		public Player()
+		public PlayerState()
 		{
 		}
 
