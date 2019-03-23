@@ -36,9 +36,11 @@ namespace Model.Cards
 			
 		}
 
-		private CardSuit Suit { get; set; }
+		public CardSuit Suit { get; set; }
 
-		private CardRank Rank { get; set; }
+		public CardRank Rank { get; set; }
+
+		public bool IsHide { get; set; }
 
 
 		public override string ToString()
