@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using Model.Players;
 using ReactiveUI;
@@ -11,34 +12,7 @@ namespace ViewModel
 	{
 		public GameViewModel()
 		{
-			Pot = 0;
-			MinBet = 50;
-			StartCash = 10000;
-			_players = new List<PlayerViewModel>();
-
-			FirstPlayer = new PlayerViewModel()
-				{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = true, Name = "Игрок" } };
-			SecondPlayer = new PlayerViewModel()
-				{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 1" } };
-			ThirdPlayer = new PlayerViewModel()
-				{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 2" } };
-			FourthPlayer = new PlayerViewModel()
-				{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 3" } };
-			FifthPlayer = new PlayerViewModel()
-				{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 4" } };
-			SixthPlayer = new PlayerViewModel()
-				{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 5" } };
-			_deck = new CardDeck();
-
-			_players.Add(FirstPlayer);
-			_players.Add(SecondPlayer);
-			_players.Add(ThirdPlayer);
-			_players.Add(FourthPlayer);
-			_players.Add(FifthPlayer);
-			_players.Add(SixthPlayer);
-
-
-			
+			InitializeObject();
 		}
 
 		#region Private fields
@@ -76,12 +50,12 @@ namespace ViewModel
 			set { this.RaiseAndSetIfChanged(ref _startCash, value, nameof(StartCash)); }
 		}
 
-		public PlayerViewModel FirstPlayer { get; }
-		public PlayerViewModel SecondPlayer { get; }
-		public PlayerViewModel ThirdPlayer { get; }
-		public PlayerViewModel FourthPlayer { get; }
-		public PlayerViewModel FifthPlayer { get; }
-		public PlayerViewModel SixthPlayer { get; }
+		public PlayerViewModel FirstPlayer { get; private set; }
+		public PlayerViewModel SecondPlayer { get; private set; }
+		public PlayerViewModel ThirdPlayer { get; private set; }
+		public PlayerViewModel FourthPlayer { get; private set; }
+		public PlayerViewModel FifthPlayer { get; private set; }
+		public PlayerViewModel SixthPlayer { get; private set; }
 
 		public Card FlopCard1
 		{
@@ -143,5 +117,37 @@ namespace ViewModel
 
 		#endregion
 
+		#region Private methods
+
+		private void InitializeObject()
+		{
+			Pot = 0;
+			MinBet = 50;
+			StartCash = 10000;
+			_players = new List<PlayerViewModel>();
+
+			FirstPlayer = new PlayerViewModel()
+				{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = true, Name = "Игрок" } };
+			SecondPlayer = new PlayerViewModel()
+				{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 1" } };
+			ThirdPlayer = new PlayerViewModel()
+				{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 2" } };
+			FourthPlayer = new PlayerViewModel()
+				{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 3" } };
+			FifthPlayer = new PlayerViewModel()
+				{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 4" } };
+			SixthPlayer = new PlayerViewModel()
+				{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 5" } };
+			_deck = new CardDeck();
+
+			_players.Add(FirstPlayer);
+			_players.Add(SecondPlayer);
+			_players.Add(ThirdPlayer);
+			_players.Add(FourthPlayer);
+			_players.Add(FifthPlayer);
+			_players.Add(SixthPlayer);
+		}
+
+		#endregion
 	}
 }
