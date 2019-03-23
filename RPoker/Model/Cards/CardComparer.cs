@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Model.Cards
 {
-	class CardComparer : IComparer<Card>
+	public class CardComparer : IComparer<Card>
 	{
 		public int Compare(Card x, Card y)
 		{
