@@ -82,7 +82,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="TemplateSelectors\TemplateSelector.cs" />
+    <Compile Include="TemplateSelectors\CardTemplateSelector.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameWindow.xaml.cs">

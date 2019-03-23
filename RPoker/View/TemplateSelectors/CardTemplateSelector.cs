@@ -19,7 +19,8 @@ namespace View.TemplateSelectors
                 var template = (DataTemplate)Application.Current.Resources[card.ToString()];
                 return template;
             }
-            throw new NotSupportedException();
+
+            return null;
         }
     }
 }
