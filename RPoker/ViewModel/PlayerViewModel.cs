@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ViewModel
 {
-	class PlayerViewModel : PlayerBaseViewModel
+	public class PlayerViewModel : PlayerBaseViewModel
 	{
 		public PlayerViewModel()
 		{

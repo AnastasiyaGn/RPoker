@@ -6,7 +6,7 @@ using ReactiveUI;
 
 namespace ViewModel
 {
-	class AIViewModel : PlayerBaseViewModel
+	public class AIViewModel : PlayerBaseViewModel
 	{
 		public AIViewModel()
 		{

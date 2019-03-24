@@ -6,26 +6,26 @@
         xmlns:local="clr-namespace:View"
         mc:Ignorable="d"
         Title="PlayerInterfaceWindow" Height="100" Width="100">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-        </Grid.RowDefinitions>
-        <Border Grid.Column="0" Grid.RowSpan="2">
-            <ContentControl Content="{Binding Path=PlayerCard1}" ContentTemplateSelector="{StaticResource CardTemplateSelector}" Style="{StaticResource CardStyle}"/>
-        </Border>
-        <Border Grid.Column="1" Grid.RowSpan="2">
-            <ContentControl Content="{Binding Path=PlayerCard2}" ContentTemplateSelector="{StaticResource CardTemplateSelector}" Style="{StaticResource CardStyle}"/>
-        </Border>
-        <Button Grid.Row="0" Grid.Column="2" Style="{StaticResource GameButtonStyle}"></Button>
-        <Button Grid.Row="1" Grid.Column="2" Style="{StaticResource GameButtonStyle}"></Button>
-        <Button Grid.Row="2" Grid.Column="2" Style="{StaticResource GameButtonStyle}"></Button>
-        <TextBlock Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Money"></TextBlock>
-    </Grid>
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+		<Border Grid.Column="0" Grid.RowSpan="2" Style="{StaticResource CardBorderStyle}">
+			<ContentControl Content="{Binding Path=PlayerState.FirstCard}" ContentTemplateSelector="{StaticResource CardTemplateSelector}" Style="{StaticResource CardStyle}"/>
+		</Border>
+		<Border Grid.Column="1" Grid.RowSpan="2" Style="{StaticResource CardBorderStyle}">
+			<ContentControl Content="{Binding Path=PlayerState.SecondCard}" ContentTemplateSelector="{StaticResource CardTemplateSelector}" Style="{StaticResource CardStyle}"/>
+		</Border>
+		<Button Grid.Row="0" Grid.Column="2" Style="{StaticResource GameButtonStyle}" Content="F" Command="{Binding Path=Fold}"/>
+		<Button Grid.Row="1" Grid.Column="2" Style="{StaticResource GameButtonStyle}" Content="R" Command="{Binding Path=Raise}"/>
+		<Button Grid.Row="2" Grid.Column="2" Style="{StaticResource GameButtonStyle}" Content="C" Command="{Binding Path=Call}"/>
+		<TextBlock Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Path=PlayerState.Cash}"/>
+	</Grid>
 </Window>

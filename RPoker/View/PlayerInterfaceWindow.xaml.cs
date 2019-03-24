@@ -14,17 +14,35 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Model.Cards;
 using ViewModel;
+using Model.Players;
 
 namespace View
 {
-    /// <summary>
-    /// Логика взаимодействия для PlayerInterfaceWindow.xaml
-    /// </summary>
-    public partial class PlayerInterfaceWindow : Window
-    {
-        public PlayerInterfaceWindow()
-        {
-            InitializeComponent();
-        }
-    }
+	/// <summary>
+	/// Логика взаимодействия для PlayerInterfaceWindow.xaml
+	/// </summary>
+	public partial class PlayerInterfaceWindow : Window
+	{
+		public PlayerInterfaceWindow()
+		{
+			InitializeComponent();
+
+			var vm = new PlayerViewModel();
+			vm.PlayerState = new PlayerState()
+			{
+				FirstCard = new Card(CardSuit.Diamond, CardRank.Five),
+				SecondCard = new Card(CardSuit.Spade, CardRank.Ace),
+				Cash = 10000,
+				IsBigBlind = true,
+				IsDealer = true,
+				IsSmallBlind = true,
+				Name = "Игрок",
+				Number = 0
+			};
+
+			DataContext = vm;
+
+
+		}
+	}
 }
