@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Model.Cards;
+using ViewModel;
 
 namespace View
 {
@@ -22,6 +24,14 @@ namespace View
         public GameWindow()
 		{
 			InitializeComponent();
+			var vm = new GameViewModel();
+			DataContext = vm;
+
+			vm.MakeFlop();
+
+
 		}
     }
+
+		
 }

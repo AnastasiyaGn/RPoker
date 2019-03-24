@@ -1,176 +1,202 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:View.TemplateSelectors">
-    <Style x:Key="ImageSizeStyle"
-           TargetType="Image">
-        <Setter Property="Height" Value="120"/>
-        <Setter Property="Width" Value="100"/>
-    </Style>
-    <SolidColorBrush x:Key="TableColor" Color="DarkGreen"/>
-    <SolidColorBrush x:Key="TableBorderColor" Color="Gray"/>
-    <SolidColorBrush x:Key="BackgroundColor" Color="SaddleBrown"/>
-    <SolidColorBrush x:Key="CardBorderColor" Color="White"/>
-    <!--#region DataTemplate Sources-->
-    <DataTemplate x:Key="CA">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/CA.png"/>
-    </DataTemplate>
-    <DataTemplate x:Key="CK">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/CK.png"/>
-    </DataTemplate>
-    <DataTemplate x:Key="CQ">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/CQ.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="CJ">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/CJ.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="C10">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/C10.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="C9">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/C9.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="C8">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/C8.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="C7">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/C7.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="C6">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/C6.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="C5">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/C5.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="C4">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/C4.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="C3">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/C3.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="C2">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/C2.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="DA">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/DA.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="DK">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/DK.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="DQ">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/DQ.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="DJ">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/DJ.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="D10">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/D10.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="D9">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/D9.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="D8">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/D8.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="D7">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/D7.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="D6">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/D6.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="D5">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/D5.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="D4">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/D4.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="D3">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/D3.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="D2">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/D2.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="HA">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/HA.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="HK">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/HK.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="HQ">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/HQ.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="HJ">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/HJ.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="H10">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/H10.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="H9">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/H9.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="H8">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/H8.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="H7">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/H7.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="H6">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/H6.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="H5">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/H5.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="H4">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/H4.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="H3">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/H3.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="H2">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/H2.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="SA">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/SA.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="SK">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/SK.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="SQ">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/SQ.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="SJ">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/SJ.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="S10">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/S10.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="S9">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/S9.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="S8">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/S8.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="S7">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/S7.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="S6">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/S6.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="S5">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/S5.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="S4">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/S4.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="S3">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/S3.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="S2">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/S2.png" />
-    </DataTemplate>
-    <DataTemplate x:Key="Back_red">
-        <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/Back_red.png" />
-    </DataTemplate>
-    <!--#endregion-->
-    <local:CardTemplateSelector x:Key="CardTemplateSelector"/>
-        
+	<Style x:Key="ImageSizeStyle" TargetType="Image">
+		<Setter Property="Height" Value="120"/>
+		<Setter Property="Width" Value="100"/>
+	</Style>
+
+	<SolidColorBrush x:Key="TableColor" Color="DarkGreen"/>
+	<SolidColorBrush x:Key="TableBorderColor" Color="Gray"/>
+	<SolidColorBrush x:Key="BackgroundColor" Color="SaddleBrown"/>
+	<SolidColorBrush x:Key="CardBorderColor" Color="White"/>
+
+	<Style x:Key="CardBorderStyle" TargetType="Border">
+		<Setter Property="Width" Value="120"/>
+		<Setter Property="Height" Value="142"/>
+		<Setter Property="Margin" Value="5,0,0,0"/>
+		<Setter Property="BorderThickness" Value="5"/>
+		<Setter Property="BorderBrush" Value="{StaticResource CardBorderColor}" />
+		<Setter Property="Background" Value="{StaticResource TableColor}"/>
+	</Style>
+
+	<Style x:Key="CardStyle" TargetType="ContentControl">
+		<Setter Property="VerticalAlignment" Value="Center"/>
+		<Setter Property="HorizontalAlignment" Value="Center"/>
+		<Setter Property="Margin" Value="5"/>
+	</Style>
+
+	<Style x:Key="TableStyle" TargetType="Border">
+		<Setter Property="CornerRadius" Value="80"/>
+		<Setter Property="Background" Value="{StaticResource TableColor}"/>
+		<Setter Property="BorderThickness" Value="5"/>
+		<Setter Property="BorderBrush" Value="{StaticResource TableBorderColor}"/>
+		<Setter Property="Width" Value="800"/>
+		<Setter Property="Height" Value="400"/>
+		<!--<Setter Property="" Value=""/>-->
+	</Style>
+
+	<!--#region DataTemplate Sources-->
+	<DataTemplate x:Key="CA">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/CA.png"/>
+	</DataTemplate>
+	<DataTemplate x:Key="CK">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/CK.png"/>
+	</DataTemplate>
+	<DataTemplate x:Key="CQ">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/CQ.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="CJ">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/CJ.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="C10">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/C10.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="C9">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/C9.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="C8">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/C8.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="C7">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/C7.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="C6">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/C6.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="C5">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/C5.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="C4">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/C4.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="C3">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/C3.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="C2">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/C2.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="DA">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/DA.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="DK">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/DK.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="DQ">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/DQ.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="DJ">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/DJ.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="D10">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/D10.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="D9">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/D9.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="D8">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/D8.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="D7">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/D7.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="D6">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/D6.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="D5">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/D5.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="D4">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/D4.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="D3">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/D3.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="D2">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/D2.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="HA">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/HA.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="HK">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/HK.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="HQ">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/HQ.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="HJ">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/HJ.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="H10">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/H10.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="H9">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/H9.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="H8">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/H8.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="H7">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/H7.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="H6">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/H6.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="H5">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/H5.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="H4">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/H4.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="H3">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/H3.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="H2">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/H2.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="SA">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/SA.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="SK">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/SK.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="SQ">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/SQ.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="SJ">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/SJ.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="S10">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/S10.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="S9">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/S9.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="S8">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/S8.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="S7">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/S7.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="S6">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/S6.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="S5">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/S5.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="S4">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/S4.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="S3">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/S3.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="S2">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/S2.png" />
+	</DataTemplate>
+	<DataTemplate x:Key="Back_red">
+		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/Back_red.png" />
+	</DataTemplate>
+	<!--#endregion-->
+	<local:CardTemplateSelector x:Key="CardTemplateSelector"/>
+
 </ResourceDictionary>
