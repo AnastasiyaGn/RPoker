@@ -41,9 +41,15 @@ namespace Model.Cards
 			Rank = rank;
 		}
 
+		#region Private fields
+
 		private bool _isHide;
 		private CardSuit _suit;
 		private CardRank _rank;
+
+		#endregion
+
+		#region Public properties
 
 		public CardSuit Suit
 		{
@@ -63,13 +69,29 @@ namespace Model.Cards
 			set { this.RaiseAndSetIfChanged(ref _isHide, value, nameof(IsHide)); }
 		}
 
+		#endregion
 
+
+		#region Public methods
+
+		public void Show()
+		{
+			IsHide = false;
+		}
+
+		public void Hide()
+		{
+			IsHide = true;
+		}
 
 		public override string ToString()
 		{
 			return $"{SuitMapper[Suit]}{RankMapper[Rank]}";
 		}
 
+		#endregion
+
+		#region Static data
 
 		public static Dictionary<CardRank, string> RankMapper = new Dictionary<CardRank, string>()
 		{
@@ -85,7 +107,7 @@ namespace Model.Cards
 			{ CardRank.Jack,  "J" },
 			{ CardRank.Queen, "Q" },
 			{ CardRank.King,  "K" },
-			{ CardRank.Ace,   "A"},
+			{ CardRank.Ace,   "A" },
 		};
 
 		public static Dictionary<CardSuit, string> SuitMapper = new Dictionary<CardSuit, string>()
@@ -96,5 +118,6 @@ namespace Model.Cards
 			{ CardSuit.Spade,   "S" }
 		};
 
+		#endregion
 	}
 }
