@@ -115,6 +115,13 @@ namespace ViewModel
 			SixthPlayer.PlayerState.SecondCard = _deck.GetRandomCard();
 		}
 
+		public void MakeFlop()
+		{
+			FlopCard1 = _deck.GetRandomCard();
+			FlopCard2 = _deck.GetRandomCard();
+			FlopCard3 = _deck.GetRandomCard();
+		}
+
 		#endregion
 
 		#region Private methods

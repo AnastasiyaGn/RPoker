@@ -42,7 +42,7 @@ namespace Model.Cards
 		public Card GetRandomCard()
 		{
 			int i = _generator.Next(_cards.Count);
-			while (!_discardedCards.Contains(i))
+			while (_discardedCards.Contains(i))
 				i = _generator.Next(_cards.Count);
 
 			_discardedCards.Add(i);
