@@ -12,10 +12,11 @@ namespace Model.Cards
 		TwoPair = 3,
 		ThreeOfKind = 4,
 		Straight = 5,
-		FullHouse = 6,
-		Kape = 7,
-		StraightFlush = 8,
-		RoyalFlush = 9
+        Flush = 6,
+		FullHouse = 7,
+		Kape = 8,
+		StraightFlush = 9,
+		RoyalFlush = 10
 	};
 
 	public static class CombinationChecker
