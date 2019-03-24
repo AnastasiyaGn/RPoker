@@ -25,14 +25,16 @@
 		<Setter Property="BorderBrush" Value="{StaticResource CardBorderColor}" />
 		<Setter Property="Background" Value="{StaticResource TableColor}"/>
 	</Style>
+    <Style x:Key="PlayerCardBorderStyle" TargetType="Border">
+    </Style>
 
-	<Style x:Key="CardStyle" TargetType="ContentControl">
-		<Setter Property="VerticalAlignment" Value="Center"/>
-		<Setter Property="HorizontalAlignment" Value="Center"/>
-		<Setter Property="Margin" Value="5"/>
-	</Style>
+    <Style x:Key="CardStyle" TargetType="ContentControl">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="5"/>
+    </Style>
 
-	<Style x:Key="TableStyle" TargetType="Border">
+    <Style x:Key="TableStyle" TargetType="Border">
 		<Setter Property="CornerRadius" Value="80"/>
 		<Setter Property="Background" Value="{StaticResource TableColor}"/>
 		<Setter Property="BorderThickness" Value="5"/>

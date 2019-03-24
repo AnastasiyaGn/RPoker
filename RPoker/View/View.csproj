@@ -82,6 +82,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="PlayerInterfaceWindow.xaml.cs">
+      <DependentUpon>PlayerInterfaceWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TemplateSelectors\CardTemplateSelector.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -130,6 +133,9 @@
     </Page>
     <Page Include="GameWindow.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PlayerInterfaceWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

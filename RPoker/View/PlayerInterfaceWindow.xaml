@@ -1,0 +1,31 @@
+﻿<Window x:Class="View.PlayerInterfaceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:View"
+        mc:Ignorable="d"
+        Title="PlayerInterfaceWindow" Height="100" Width="100">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Column="0" Grid.RowSpan="2">
+            <ContentControl Content="{Binding Path=PlayerCard1}" ContentTemplateSelector="{StaticResource CardTemplateSelector}" Style="{StaticResource CardStyle}"/>
+        </Border>
+        <Border Grid.Column="1" Grid.RowSpan="2">
+            <ContentControl Content="{Binding Path=PlayerCard2}" ContentTemplateSelector="{StaticResource CardTemplateSelector}" Style="{StaticResource CardStyle}"/>
+        </Border>
+        <Button Grid.Row="0" Grid.Column="2" Content="C" Command="{Binding CButtonPressed}"/>
+        <Button Grid.Row="1" Grid.Column="2" Content="F" Command="{Binding FButtonPressed}"/>
+        <TextBlock Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Money"></TextBlock>
+        <Button Grid.Column="2" Grid.Row="2" Content="R" Command="{Binding RButtonPressed}"/>
+    </Grid>
+</Window>
