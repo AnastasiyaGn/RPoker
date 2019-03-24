@@ -78,6 +78,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AIViewWindow.xaml.cs">
+      <DependentUpon>AIViewWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -129,6 +132,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="AIViewWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Dictionary.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
