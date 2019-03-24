@@ -27,6 +27,7 @@ namespace ViewModel
 		private Card _flopCard3;
 		private Card _turnCard;
 		private Card _riverCard;
+		private List<Card> _cardsOnTable;
 
 		#endregion
 
@@ -38,7 +39,7 @@ namespace ViewModel
 			set { this.RaiseAndSetIfChanged(ref _pot, value, nameof(Pot)); }
 		}
 
-        public int MinBet
+		public int MinBet
 		{
 			get { return _minBet; }
 			set { this.RaiseAndSetIfChanged(ref _minBet, value, nameof(MinBet)); }
@@ -87,6 +88,7 @@ namespace ViewModel
 			set { this.RaiseAndSetIfChanged(ref _riverCard, value, nameof(RiverCard)); }
 		}
 
+		public IEnumerable<Card> CardsOnTable => _cardsOnTable;
 
 		#endregion
 
@@ -125,18 +127,26 @@ namespace ViewModel
 
 			FlopCard3 = _deck.GetRandomCard();
 			FlopCard3.Show();
+
+			_cardsOnTable.Add(FlopCard1);
+			_cardsOnTable.Add(FlopCard2);
+			_cardsOnTable.Add(FlopCard3);
 		}
 
 		public void DoTurnCard()
 		{
 			TurnCard = _deck.GetRandomCard();
 			TurnCard.Show();
+
+			_cardsOnTable.Add(TurnCard);
 		}
 
 		public void DoRiverCard()
 		{
 			RiverCard = _deck.GetRandomCard();
 			RiverCard.Show();
+
+			_cardsOnTable.Add(RiverCard);
 		}
 
 		public void CardDistribution()
@@ -161,19 +171,20 @@ namespace ViewModel
 			MinBet = 50;
 			StartCash = 10000;
 			_players = new List<PlayerViewModel>();
+			_cardsOnTable = new List<Card>();
 
 			FirstPlayer = new PlayerViewModel()
-				{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = true, Name = "Игрок" } };
+			{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = true, Name = "Игрок" } };
 			SecondPlayer = new PlayerViewModel()
-				{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 1" } };
+			{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 1" } };
 			ThirdPlayer = new PlayerViewModel()
-				{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 2" } };
+			{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 2" } };
 			FourthPlayer = new PlayerViewModel()
-				{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 3" } };
+			{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 3" } };
 			FifthPlayer = new PlayerViewModel()
-				{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 4" } };
+			{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 4" } };
 			SixthPlayer = new PlayerViewModel()
-				{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 5" } };
+			{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 5" } };
 			_deck = new CardDeck();
 
 			_players.Add(FirstPlayer);

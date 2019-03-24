@@ -53,6 +53,8 @@ namespace Model.Players
 			set { this.RaiseAndSetIfChanged(ref _secondCard, value, nameof(SecondCard)); }
 		}
 
+		private IEnumerable<Card> Cards => new List<Card>() {FirstCard, SecondCard};
+
 		#endregion
 	}
 }
