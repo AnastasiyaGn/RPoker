@@ -21,59 +21,57 @@ namespace Model.Cards
 
 	public static class CombinationChecker
 	{
-		public static bool IsRoyalFlush((IEnumerable<Card>, IEnumerable<Card>) x)
-		{
-			var playerCards = x.Item1;
-			var tableCards = x.Item2;
-			return false;
-		}
-
-		public static bool IsStraightFlush((IEnumerable<Card>, IEnumerable<Card>) x)
+		public static bool IsRoyalFlush(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
 		{
 			return false;
 		}
 
-		public static bool IsKape((IEnumerable<Card>, IEnumerable<Card>) x)
+		public static bool IsStraightFlush(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
 		{
 			return false;
 		}
 
-		public static bool IsFullHouse((IEnumerable<Card>, IEnumerable<Card>) x)
+		public static bool IsKape(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
 		{
 			return false;
 		}
 
-		public static bool IsFlush((IEnumerable<Card>, IEnumerable<Card>) x)
+		public static bool IsFullHouse(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
 		{
 			return false;
 		}
 
-		public static bool IsStraight((IEnumerable<Card>, IEnumerable<Card>) x)
+		public static bool IsFlush(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
 		{
 			return false;
 		}
 
-		public static bool IsThreeOfKind((IEnumerable<Card>, IEnumerable<Card>) x)
+		public static bool IsStraight(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
 		{
 			return false;
 		}
 
-		public static bool IsTwoPair((IEnumerable<Card>, IEnumerable<Card>) x)
+		public static bool IsThreeOfKind(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
 		{
 			return false;
 		}
 
-		public static bool IsPair((IEnumerable<Card>, IEnumerable<Card>) x)
+		public static bool IsTwoPair(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
 		{
 			return false;
 		}
 
-		public static bool IsHightCard((IEnumerable<Card>, IEnumerable<Card>) x)
+		public static bool IsPair(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
 		{
 			return false;
 		}
 
-		public static Combination DetermineCombination((IEnumerable<Card>, IEnumerable<Card>) x)
+		public static bool IsHightCard(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
+		{
+			return false;
+		}
+
+		public static Combination DetermineCombination(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
 		{
 			return Combination.FullHouse;
 		}

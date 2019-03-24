@@ -8,7 +8,7 @@ namespace Model.Cards
 	{
 		public int Compare(Card x, Card y)
 		{
-            return (int) x.Rank - (int) y.Rank;
+			return (int)x.Rank - (int)y.Rank;
 		}
 	}
 }
