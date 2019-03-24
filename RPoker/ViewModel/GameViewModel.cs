@@ -38,7 +38,7 @@ namespace ViewModel
 			set { this.RaiseAndSetIfChanged(ref _pot, value, nameof(Pot)); }
 		}
 
-		public int MinBet
+        public int MinBet
 		{
 			get { return _minBet; }
 			set { this.RaiseAndSetIfChanged(ref _minBet, value, nameof(MinBet)); }
