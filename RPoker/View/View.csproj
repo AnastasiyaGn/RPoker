@@ -85,6 +85,7 @@
     <Compile Include="PlayerInterfaceWindow.xaml.cs">
       <DependentUpon>PlayerInterfaceWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TemplateSelectors\ButtonTemplateSelector.cs" />
     <Compile Include="TemplateSelectors\CardTemplateSelector.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -216,8 +216,19 @@
 		<Image Style="{StaticResource ImageSizeStyle}" Source="CardImg/CardBackSide.png"/>
 	</DataTemplate>
 	<!--#endregion-->
+    <!--#region Button data templates-->
+    <DataTemplate x:Key="ButtonC">
+        <Button Style="{StaticResource ButtonStyle}" Command="{Binding Path=ButtonC}"/>
+    </DataTemplate>
+    <DataTemplate x:Key="ButtonF">
+        <Button Style="{StaticResource ButtonStyle}" Command="{Binding Path=ButtonF}"/>
+    </DataTemplate>
+    <DataTemplate x:Key="ButtonR">
+        <Button Style="{StaticResource ButtonStyle}" Command="{Binding Path=ButtonR}"/>
+    </DataTemplate>
+    <!--#endregion-->
 
-
-	<local:CardTemplateSelector x:Key="CardTemplateSelector"/>
+    <local:CardTemplateSelector x:Key="CardTemplateSelector"/>
+    <local:ButtonTemplateSelector x:Key="ButtonTemplateSelector"/>
 
 </ResourceDictionary>
