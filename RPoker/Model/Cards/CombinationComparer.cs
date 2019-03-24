@@ -11,6 +11,7 @@ namespace Model.Cards
 		{
 			var playerCards = x.Item1;
 			var tableCards = x.Item2;
+			return 0;
 		}
 
 	}
