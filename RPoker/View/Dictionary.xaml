@@ -36,7 +36,9 @@
 		<!--<Setter Property="" Value=""/>-->
 	</Style>
 
-	<!--#region DataTemplate Sources-->
+	<!--#region Card data templates-->
+
+	<!--#region Club -->
 	<DataTemplate x:Key="CA">
 		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/CA.png"/>
 	</DataTemplate>
@@ -76,6 +78,9 @@
 	<DataTemplate x:Key="C2">
 		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/C2.png" />
 	</DataTemplate>
+	<!--#endregion -->
+
+	<!--#region Diamond -->
 	<DataTemplate x:Key="DA">
 		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/DA.png" />
 	</DataTemplate>
@@ -115,6 +120,9 @@
 	<DataTemplate x:Key="D2">
 		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/D2.png" />
 	</DataTemplate>
+	<!--#endregion -->
+
+	<!--#region Hearth -->
 	<DataTemplate x:Key="HA">
 		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/HA.png" />
 	</DataTemplate>
@@ -154,6 +162,9 @@
 	<DataTemplate x:Key="H2">
 		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/H2.png" />
 	</DataTemplate>
+	<!--#endregion -->
+
+	<!--#region Spade -->
 	<DataTemplate x:Key="SA">
 		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/SA.png" />
 	</DataTemplate>
@@ -193,10 +204,14 @@
 	<DataTemplate x:Key="S2">
 		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/S2.png" />
 	</DataTemplate>
-	<DataTemplate x:Key="Back_red">
-		<Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/Back_red.png" />
+	<!--#endregion -->
+
+	<DataTemplate x:Key="CardShirtDown">
+		<Image Style="{StaticResource ImageSizeStyle}" Source="CardImg/CardBackSide.png"/>
 	</DataTemplate>
 	<!--#endregion-->
+
+
 	<local:CardTemplateSelector x:Key="CardTemplateSelector"/>
 
 </ResourceDictionary>

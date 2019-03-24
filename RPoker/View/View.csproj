@@ -191,7 +191,7 @@
     <Resource Include="CardImg\SJ.png" />
     <Resource Include="CardImg\SK.png" />
     <Resource Include="CardImg\SQ.png" />
-    <Resource Include="CardImg\Back_red.png" />
+    <Resource Include="CardImg\CardBackSide.png" />
     <Content Include="CardImg\check.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

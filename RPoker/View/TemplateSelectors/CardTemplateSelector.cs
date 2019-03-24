@@ -9,18 +9,23 @@ using Model.Cards;
 
 namespace View.TemplateSelectors
 {
-    public class CardTemplateSelector : DataTemplateSelector
-    {
-        public override DataTemplate SelectTemplate(object item, DependencyObject container)
-        {
-            var card = item as Card;
-            if (card != null)
-            {
-                var template = (DataTemplate)Application.Current.Resources[card.ToString()];
-                return template;
-            }
+	public class CardTemplateSelector : DataTemplateSelector
+	{
+		public override DataTemplate SelectTemplate(object item, DependencyObject container)
+		{
+			var card = item as Card;
+			if (card != null)
+			{
+				DataTemplate cardTemplate;
+				if (card.IsHide)
+					cardTemplate = (DataTemplate)Application.Current.Resources["CardShirtDown"];
+				else
+					cardTemplate = (DataTemplate)Application.Current.Resources[card.ToString()];
 
-            return null;
-        }
-    }
+				return cardTemplate;
+			}
+
+			return null;
+		}
+	}
 }
