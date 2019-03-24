@@ -20,7 +20,10 @@ namespace Model.Cards
             xList.Sort(comparator);
             yList.Sort(comparator);
 
-            return comparator.Compare(xList[0], yList[0]);
+            if (comparator.Compare(xList.Last(), yList.Last()) == 0)
+                return comparator.Compare(xList[0], yList[0]);
+            else
+                return comparator.Compare(xList.Last(), yList.Last());
         }
 
 	}
