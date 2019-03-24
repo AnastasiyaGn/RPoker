@@ -1,21 +1,25 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:View.TemplateSelectors">
-    <Style x:Key="ImageSizeStyle" TargetType="Image">
-        <Setter Property="Height" Value="120"/>
-        <Setter Property="Width" Value="100"/>
-    </Style>
-    <Style x:Key="PlayerSquareStyle" TargetType="Border">
-        <Setter Property="Height" Value="100"/>
-        <Setter Property="Width" Value="100"/>
-        <Setter Property="Background" Value="White"/>
-        <Setter Property="Padding" Value="3,3,3,3"/>
-    </Style>
 
-    <SolidColorBrush x:Key="TableColor" Color="DarkGreen"/>
+	<Style x:Key="ImageSizeStyle" TargetType="Image">
+		<Setter Property="Height" Value="120"/>
+		<Setter Property="Width" Value="100"/>
+	</Style>
+
+	<Style x:Key="PlayerSquareStyle" TargetType="Border">
+		<Setter Property="Height" Value="100"/>
+		<Setter Property="Width" Value="100"/>
+		<Setter Property="Background" Value="White"/>
+		<Setter Property="Padding" Value="3,3,3,3"/>
+	</Style>
+
+	<SolidColorBrush x:Key="TableColor" Color="DarkGreen"/>
 	<SolidColorBrush x:Key="TableBorderColor" Color="Gray"/>
 	<SolidColorBrush x:Key="BackgroundColor" Color="SaddleBrown"/>
 	<SolidColorBrush x:Key="CardBorderColor" Color="White"/>
+
+	<local:CardTemplateSelector x:Key="CardTemplateSelector"/>
 
 	<Style x:Key="CardBorderStyle" TargetType="Border">
 		<Setter Property="Width" Value="120"/>
@@ -25,26 +29,26 @@
 		<Setter Property="BorderBrush" Value="{StaticResource CardBorderColor}" />
 		<Setter Property="Background" Value="Transparent"/>
 	</Style>
-    <Style x:Key="PlayerCardBorderStyle" TargetType="Border">
-    </Style>
 
-    <Style x:Key="CardStyle" TargetType="ContentControl">
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="HorizontalAlignment" Value="Center"/>
-        <Setter Property="Margin" Value="5"/>
-    </Style>
+	<Style x:Key="PlayerCardBorderStyle" TargetType="Border">
+	</Style>
 
-    <Style x:Key="TableStyle" TargetType="Border">
+	<Style x:Key="CardStyle" TargetType="ContentControl">
+		<Setter Property="VerticalAlignment" Value="Center"/>
+		<Setter Property="HorizontalAlignment" Value="Center"/>
+		<Setter Property="Margin" Value="5"/>
+	</Style>
+
+	<Style x:Key="TableStyle" TargetType="Border">
 		<Setter Property="CornerRadius" Value="80"/>
 		<Setter Property="Background" Value="{StaticResource TableColor}"/>
 		<Setter Property="BorderThickness" Value="5"/>
-        <Setter Property="BorderBrush" Value="{StaticResource TableBorderColor}"/>
-        <!--<Setter Property="" Value=""/>-->
+		<Setter Property="BorderBrush" Value="{StaticResource TableBorderColor}"/>
 	</Style>
 
-    <Style x:Key="GameButtonStyle" TargetType="Button">
-        <Setter Property="Background" Value="Red"/>
-    </Style>
+	<Style x:Key="GameButtonStyle" TargetType="Button">
+		<Setter Property="Background" Value="Red"/>
+	</Style>
 
 	<!--#region Card data templates-->
 
@@ -220,7 +224,5 @@
 		<Image Style="{StaticResource ImageSizeStyle}" Source="CardImg/CardBackSide.png"/>
 	</DataTemplate>
 	<!--#endregion-->
-
-    <local:CardTemplateSelector x:Key="CardTemplateSelector"/>
 
 </ResourceDictionary>
