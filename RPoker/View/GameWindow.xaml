@@ -5,10 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:View.TemplateSelectors"
         mc:Ignorable="d"
-        Title="RPoker" Height="450" Width="800">
-    <Grid>
-        <ContentControl Content="{Binding Path=Card}" 
-                        ContentTemplateSelector="{StaticResource CardTemplateSelector}">
-        </ContentControl>
+        Title="RPoker" Height="800" Width="1100" MinHeight="800" MinWidth="1100">
+    <Grid Background="SaddleBrown">
+        <Border CornerRadius="80" Background="DarkGreen" BorderThickness="5" BorderBrush="Gray" HorizontalAlignment="Center" VerticalAlignment="Center" Height="400" Width="800">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Border Height="142" Width="120" Margin="5,0,0,0" BorderBrush="White" BorderThickness="5" Background="DarkGreen">
+                    <ContentControl Content="{Binding Path=Card}" VerticalAlignment="Center" HorizontalAlignment="Center"
+                            ContentTemplateSelector="{StaticResource CardTemplateSelector}" Margin="5">
+                    </ContentControl>
+                </Border>
+                <Border Height="142" Width="120" Margin="5,0,0,0" BorderBrush="White" BorderThickness="5" Background="DarkGreen">
+                    <ContentControl Content="{Binding Path=Card}" VerticalAlignment="Center" HorizontalAlignment="Center"
+                            ContentTemplateSelector="{StaticResource CardTemplateSelector}" Margin="5">
+                    </ContentControl>
+                </Border>
+                <Border Height="142" Width="120" Margin="5,0,0,0" BorderBrush="White" BorderThickness="5" Background="DarkGreen">
+                    <ContentControl Content="{Binding Path=Card}" VerticalAlignment="Center" HorizontalAlignment="Center"
+                            ContentTemplateSelector="{StaticResource CardTemplateSelector}" Margin="5">
+                    </ContentControl>
+                </Border>
+                <Border Height="142" Width="120" Margin="5,0,0,0" BorderBrush="White" BorderThickness="5" Background="DarkGreen">
+                    <ContentControl Content="{Binding Path=Card}" VerticalAlignment="Center" HorizontalAlignment="Center"
+                            ContentTemplateSelector="{StaticResource CardTemplateSelector}" Margin="5">
+                    </ContentControl>
+                </Border>
+                <Border Height="142" Width="120" Margin="5,0,0,0" BorderBrush="White" BorderThickness="5" Background="DarkGreen">
+                    <ContentControl Content="{Binding Path=Card}" VerticalAlignment="Center" HorizontalAlignment="Center"
+                            ContentTemplateSelector="{StaticResource CardTemplateSelector}" Margin="5">
+                    </ContentControl>
+                </Border>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>

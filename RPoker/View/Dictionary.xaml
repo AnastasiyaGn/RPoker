@@ -3,7 +3,7 @@
                     xmlns:local="clr-namespace:View.TemplateSelectors">
     <Style x:Key="ImageSizeStyle"
            TargetType="Image">
-        <Setter Property="Height" Value="100"/>
+        <Setter Property="Height" Value="120"/>
         <Setter Property="Width" Value="100"/>
     </Style>
     <!--#region DataTemplate Sources-->
