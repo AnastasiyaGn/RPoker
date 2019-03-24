@@ -139,6 +139,18 @@ namespace ViewModel
 			RiverCard.Show();
 		}
 
+		public void CardDistribution()
+		{
+			foreach (var i in _players)
+			{
+				i.PlayerState.FirstCard = _deck.GetRandomCard();
+				i.PlayerState.SecondCard = _deck.GetRandomCard();
+			}
+
+			FirstPlayer.PlayerState.FirstCard.Show();
+			FirstPlayer.PlayerState.SecondCard.Show();
+		}
+
 		#endregion
 
 		#region Private methods
