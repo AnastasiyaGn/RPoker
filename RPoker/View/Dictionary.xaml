@@ -6,6 +6,10 @@
         <Setter Property="Height" Value="120"/>
         <Setter Property="Width" Value="100"/>
     </Style>
+    <SolidColorBrush x:Key="TableColor" Color="DarkGreen"/>
+    <SolidColorBrush x:Key="TableBorderColor" Color="Gray"/>
+    <SolidColorBrush x:Key="BackgroundColor" Color="SaddleBrown"/>
+    <SolidColorBrush x:Key="CardBorderColor" Color="White"/>
     <!--#region DataTemplate Sources-->
     <DataTemplate x:Key="CA">
         <Image Style="{StaticResource ImageSizeStyle}"  Source="CardImg/CA.png"/>
