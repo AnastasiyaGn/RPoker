@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using ReactiveUI;
 using Model.Players;
+using System.Reactive;
 
 namespace ViewModel
 {
@@ -19,12 +18,14 @@ namespace ViewModel
 			{
 				PlayerState.RaisePropertyChanged(nameof(PlayerState.SecondCard));
 			});
+
 		}
 
 		#region Private properties
 
 		private PlayerState _playerState;
 		private bool _canTurn;
+		private bool _isFolded;
 
 		#endregion
 
@@ -36,13 +37,28 @@ namespace ViewModel
 			set { this.RaiseAndSetIfChanged(ref _canTurn, value, nameof(CanTurn)); }
 		}
 
+		public bool IsFolded
+		{
+			get { return _isFolded; }
+			set { this.RaiseAndSetIfChanged(ref _isFolded, value, nameof(IsFolded)); }
+		}
+
 		public PlayerState PlayerState
 		{
 			get { return _playerState; }
 			set { this.RaiseAndSetIfChanged(ref _playerState, value, nameof(PlayerState)); }
 		}
 
+		public ITableInfo TableInfo { get; set; }
+
+		public ReactiveCommand<Unit, Unit> Fold { get; set; }
+		public ReactiveCommand<int, Unit> Raise { get; set; }
+		public ReactiveCommand<Unit, Unit> Call { get; set; }
+
 		#endregion
+
+
+
 
 	}
 }
