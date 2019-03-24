@@ -19,9 +19,8 @@ namespace View.TemplateSelectors
                 var template = (DataTemplate)Application.Current.Resources[card.ToString()];
                 return template;
             }
-            //var template = (DataTemplate)Application.Current.Resources["H10"];
-            //return template;
-            throw new NotSupportedException();
+
+            return null;
         }
     }
 }
