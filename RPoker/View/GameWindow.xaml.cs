@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -26,9 +27,12 @@ namespace View
 			InitializeComponent();
 			var vm = new GameViewModel();
 			DataContext = vm;
+			vm.DoFlopCard();
 
-			//vm.MakeFlop();
+			vm.FlopCard2.IsHide = true;
 
+			vm.DoTurnCard();
+			vm.DoRiverCard();
 
 		}
     }

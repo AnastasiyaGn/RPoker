@@ -8,7 +8,7 @@ namespace Model.Cards
 	{
 		public int Compare(Card x, Card y)
 		{
-			throw new NotImplementedException();
+            return (int) x.Rank - (int) y.Rank;
 		}
 	}
 }
