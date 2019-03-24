@@ -27,7 +27,7 @@ namespace View
 			var vm = new GameViewModel();
 			DataContext = vm;
 
-			vm.MakeFlop();
+			//vm.MakeFlop();
 
 
 		}
