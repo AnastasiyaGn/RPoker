@@ -23,9 +23,9 @@
         <Border Grid.Column="1" Grid.RowSpan="2">
             <ContentControl Content="{Binding Path=PlayerCard2}" ContentTemplateSelector="{StaticResource CardTemplateSelector}" Style="{StaticResource CardStyle}"/>
         </Border>
-        <ContentControl Grid.Row="0" Grid.Column="2" Content="{Binding Path=ButtonC}" ContentTemplateSelector="{StaticResource ButtonTemplateSelector}"/>
-        <ContentControl Grid.Row="1" Grid.Column="2" Content="{Binding Path=ButtonF}" ContentTemplateSelector="{StaticResource ButtonTemplateSelector}"/>
+        <Button Grid.Row="0" Grid.Column="2" Style="{StaticResource GameButtonStyle}"></Button>
+        <Button Grid.Row="1" Grid.Column="2" Style="{StaticResource GameButtonStyle}"></Button>
+        <Button Grid.Row="2" Grid.Column="2" Style="{StaticResource GameButtonStyle}"></Button>
         <TextBlock Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Money"></TextBlock>
-        <ContentControl Grid.Row="2" Grid.Column="2" Content="{Binding Path=ButtonR}" ContentTemplateSelector="{StaticResource ButtonTemplateSelector}"/>
     </Grid>
 </Window>
