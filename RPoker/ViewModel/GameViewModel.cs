@@ -96,8 +96,8 @@ namespace ViewModel
 		{
 			FirstPlayer.PlayerState.FirstCard = _deck.GetRandomCard();
 			FirstPlayer.PlayerState.SecondCard = _deck.GetRandomCard();
-			FirstPlayer.PlayerState.FirstCard.IsHide = false;
-			FirstPlayer.PlayerState.SecondCard.IsHide = false;
+			FirstPlayer.PlayerState.FirstCard.Show();
+			FirstPlayer.PlayerState.SecondCard.Show();
 
 			SecondPlayer.PlayerState.FirstCard = _deck.GetRandomCard();
 			SecondPlayer.PlayerState.SecondCard = _deck.GetRandomCard();
@@ -115,11 +115,28 @@ namespace ViewModel
 			SixthPlayer.PlayerState.SecondCard = _deck.GetRandomCard();
 		}
 
-		public void MakeFlop()
+		public void DoFlopCard()
 		{
 			FlopCard1 = _deck.GetRandomCard();
+			FlopCard1.Show();
+
 			FlopCard2 = _deck.GetRandomCard();
+			FlopCard2.Show();
+
 			FlopCard3 = _deck.GetRandomCard();
+			FlopCard3.Show();
+		}
+
+		public void DoTurnCard()
+		{
+			TurnCard = _deck.GetRandomCard();
+			TurnCard.Show();
+		}
+
+		public void DoRiverCard()
+		{
+			RiverCard = _deck.GetRandomCard();
+			RiverCard.Show();
 		}
 
 		#endregion
