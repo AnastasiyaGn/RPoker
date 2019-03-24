@@ -15,6 +15,8 @@ namespace Model.Players
 
 		private string _name;
 		private bool _isDealer;
+		private bool _isSmallBlind;
+		private bool _isBigBlind;
 		private int _cash;
 		private Card _firstCard;
 		private Card _secondCard;
@@ -33,6 +35,18 @@ namespace Model.Players
 		{
 			get { return _isDealer; }
 			set { this.RaiseAndSetIfChanged(ref _isDealer, value, nameof(IsDealer)); }
+		}
+
+		public bool IsSmallBlind
+		{
+			get { return _isSmallBlind; }
+			set { this.RaiseAndSetIfChanged(ref _isSmallBlind, value, nameof(IsSmallBlind)); }
+		}
+
+		public bool IsBigBlind
+		{
+			get { return _isBigBlind; }
+			set { this.RaiseAndSetIfChanged(ref _isBigBlind, value, nameof(IsBigBlind)); }
 		}
 
 		public int Cash

@@ -176,15 +176,15 @@ namespace ViewModel
 			FirstPlayer = new PlayerViewModel()
 			{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = true, Name = "Игрок" } };
 			SecondPlayer = new PlayerViewModel()
-			{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 1" } };
+			{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 1", IsSmallBlind = true, IsBigBlind = false } };
 			ThirdPlayer = new PlayerViewModel()
-			{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 2" } };
+			{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 2", IsSmallBlind = false, IsBigBlind = true } };
 			FourthPlayer = new PlayerViewModel()
-			{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 3" } };
+			{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 3", IsSmallBlind = false, IsBigBlind = false } };
 			FifthPlayer = new PlayerViewModel()
-			{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 4" } };
+			{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 4", IsSmallBlind = false, IsBigBlind = false } };
 			SixthPlayer = new PlayerViewModel()
-			{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 5" } };
+			{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 5", IsSmallBlind = false, IsBigBlind = false } };
 			_deck = new CardDeck();
 
 			_players.Add(FirstPlayer);
