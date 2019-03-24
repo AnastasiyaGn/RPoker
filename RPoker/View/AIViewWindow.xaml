@@ -16,10 +16,10 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Border Grid.Column="0">
-            <ContentControl Content="{Binding Path=PlayerCard1}" ContentTemplateSelector="{StaticResource CardTemplateSelector}" Style="{StaticResource CardStyle}"/>
+            <ContentControl Content="{Binding Path=AICard1}" ContentTemplateSelector="{StaticResource CardTemplateSelector}" Style="{StaticResource CardStyle}"/>
         </Border>
         <Border Grid.Column="1">
-            <ContentControl Content="{Binding Path=PlayerCard2}" ContentTemplateSelector="{StaticResource CardTemplateSelector}" Style="{StaticResource CardStyle}"/>
+            <ContentControl Content="{Binding Path=AICard2}" ContentTemplateSelector="{StaticResource CardTemplateSelector}" Style="{StaticResource CardStyle}"/>
         </Border>
         <TextBlock Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Money"></TextBlock>
     </Grid>
