@@ -20,10 +20,17 @@ namespace Model.Players
 		private int _cash;
 		private Card _firstCard;
 		private Card _secondCard;
+		private int _number;
 
 		#endregion
 
 		#region Public properties
+
+		public int Number
+		{
+			get { return _number; }
+			set { this.RaiseAndSetIfChanged(ref _number, value, nameof(Number)); }
+		}
 
 		public string Name
 		{

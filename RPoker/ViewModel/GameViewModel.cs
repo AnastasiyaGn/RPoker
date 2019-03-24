@@ -8,7 +8,7 @@ using Model.Cards;
 
 namespace ViewModel
 {
-	public class GameViewModel : ReactiveObject
+	public class GameViewModel : ReactiveObject, ITableInfo
 	{
 		public GameViewModel()
 		{
@@ -17,7 +17,7 @@ namespace ViewModel
 
 		#region Private fields
 
-		private List<PlayerViewModel> _players;
+		private List<PlayerBaseViewModel> _players;
 		private int _pot;
 		private int _minBet;
 		private int _startCash;
@@ -28,10 +28,46 @@ namespace ViewModel
 		private Card _turnCard;
 		private Card _riverCard;
 		private List<Card> _cardsOnTable;
+		private int _currentBet;
+
+		private bool _isPreFlop;
+		private bool _isFlop;
+		private bool _isTurn;
+		private bool _isRiver;
 
 		#endregion
 
 		#region Public properties
+
+		public bool IsPreFlop
+		{
+			get { return _isPreFlop; }
+			set { this.RaiseAndSetIfChanged(ref _isPreFlop, value, nameof(IsPreFlop)); }
+		}
+
+		public bool IsFlop
+		{
+			get { return _isFlop; }
+			set { this.RaiseAndSetIfChanged(ref _isFlop, value, nameof(IsFlop)); }
+		}
+
+		public bool IsTurn
+		{
+			get { return _isTurn; }
+			set { this.RaiseAndSetIfChanged(ref _isTurn, value, nameof(IsTurn)); }
+		}
+
+		public bool IsRiver
+		{
+			get { return _isRiver; }
+			set { this.RaiseAndSetIfChanged(ref _isRiver, value, nameof(IsRiver)); }
+		}
+
+		public int CurrentBet
+		{
+			get { return _currentBet; }
+			set { this.RaiseAndSetIfChanged(ref _currentBet, value, nameof(CurrentBet)); }
+		}
 
 		public int Pot
 		{
@@ -51,12 +87,12 @@ namespace ViewModel
 			set { this.RaiseAndSetIfChanged(ref _startCash, value, nameof(StartCash)); }
 		}
 
-		public PlayerViewModel FirstPlayer { get; private set; }
-		public PlayerViewModel SecondPlayer { get; private set; }
-		public PlayerViewModel ThirdPlayer { get; private set; }
-		public PlayerViewModel FourthPlayer { get; private set; }
-		public PlayerViewModel FifthPlayer { get; private set; }
-		public PlayerViewModel SixthPlayer { get; private set; }
+		public PlayerBaseViewModel FirstPlayer { get; private set; }
+		public PlayerBaseViewModel SecondPlayer { get; private set; }
+		public PlayerBaseViewModel ThirdPlayer { get; private set; }
+		public PlayerBaseViewModel FourthPlayer { get; private set; }
+		public PlayerBaseViewModel FifthPlayer { get; private set; }
+		public PlayerBaseViewModel SixthPlayer { get; private set; }
 
 		public Card FlopCard1
 		{
@@ -170,21 +206,40 @@ namespace ViewModel
 			Pot = 0;
 			MinBet = 50;
 			StartCash = 10000;
-			_players = new List<PlayerViewModel>();
+			_players = new List<PlayerBaseViewModel>();
 			_cardsOnTable = new List<Card>();
 
-			FirstPlayer = new PlayerViewModel()
-			{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = true, Name = "Игрок" } };
-			SecondPlayer = new PlayerViewModel()
-			{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 1", IsSmallBlind = true, IsBigBlind = false } };
-			ThirdPlayer = new PlayerViewModel()
-			{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 2", IsSmallBlind = false, IsBigBlind = true } };
-			FourthPlayer = new PlayerViewModel()
-			{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 3", IsSmallBlind = false, IsBigBlind = false } };
-			FifthPlayer = new PlayerViewModel()
-			{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 4", IsSmallBlind = false, IsBigBlind = false } };
-			SixthPlayer = new PlayerViewModel()
-			{ PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 5", IsSmallBlind = false, IsBigBlind = false } };
+			FirstPlayer = new PlayerBaseViewModel()
+			{
+				PlayerState = new PlayerState() { Cash = StartCash, IsDealer = true, Name = "Игрок", IsSmallBlind = false, IsBigBlind = false, Number = 0 },
+				TableInfo = this
+			};
+
+			SecondPlayer = new PlayerBaseViewModel()
+			{
+				PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 1", IsSmallBlind = true, IsBigBlind = false, Number = 1},
+				TableInfo = this
+			};
+			ThirdPlayer = new PlayerBaseViewModel()
+			{
+				PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 2", IsSmallBlind = false, IsBigBlind = true, Number = 2},
+				TableInfo = this
+			};
+			FourthPlayer = new PlayerBaseViewModel()
+			{
+				PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 3", IsSmallBlind = false, IsBigBlind = false, Number = 3},
+				TableInfo = this
+			};
+			FifthPlayer = new PlayerBaseViewModel()
+			{
+				PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 4", IsSmallBlind = false, IsBigBlind = false, Number = 4},
+				TableInfo = this
+			};
+			SixthPlayer = new PlayerBaseViewModel()
+			{
+				PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 5", IsSmallBlind = false, IsBigBlind = false, Number = 5},
+				TableInfo = this
+			};
 			_deck = new CardDeck();
 
 			_players.Add(FirstPlayer);
