@@ -1,12 +1,18 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:View.TemplateSelectors">
-	<Style x:Key="ImageSizeStyle" TargetType="Image">
-		<Setter Property="Height" Value="120"/>
-		<Setter Property="Width" Value="100"/>
-	</Style>
+    <Style x:Key="ImageSizeStyle" TargetType="Image">
+        <Setter Property="Height" Value="120"/>
+        <Setter Property="Width" Value="100"/>
+    </Style>
+    <Style x:Key="PlayerSquareStyle" TargetType="Border">
+        <Setter Property="Height" Value="100"/>
+        <Setter Property="Width" Value="100"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Padding" Value="3,3,3,3"/>
+    </Style>
 
-	<SolidColorBrush x:Key="TableColor" Color="DarkGreen"/>
+    <SolidColorBrush x:Key="TableColor" Color="DarkGreen"/>
 	<SolidColorBrush x:Key="TableBorderColor" Color="Gray"/>
 	<SolidColorBrush x:Key="BackgroundColor" Color="SaddleBrown"/>
 	<SolidColorBrush x:Key="CardBorderColor" Color="White"/>
@@ -30,10 +36,8 @@
 		<Setter Property="CornerRadius" Value="80"/>
 		<Setter Property="Background" Value="{StaticResource TableColor}"/>
 		<Setter Property="BorderThickness" Value="5"/>
-		<Setter Property="BorderBrush" Value="{StaticResource TableBorderColor}"/>
-		<Setter Property="Width" Value="800"/>
-		<Setter Property="Height" Value="400"/>
-		<!--<Setter Property="" Value=""/>-->
+        <Setter Property="BorderBrush" Value="{StaticResource TableBorderColor}"/>
+        <!--<Setter Property="" Value=""/>-->
 	</Style>
 
 	<!--#region Card data templates-->
