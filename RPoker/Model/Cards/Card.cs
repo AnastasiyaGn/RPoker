@@ -67,7 +67,7 @@ namespace Model.Cards
 
 		public override string ToString()
 		{
-			return $"{RankMapper[Rank]}{SuitMapper[Suit]}";
+			return $"{SuitMapper[Suit]}{RankMapper[Rank]}";
 		}
 
 

@@ -16,7 +16,7 @@
 					<ContentControl Content="{Binding Path=FlopCard2}" ContentTemplateSelector="{StaticResource CardTemplateSelector}" Style="{StaticResource CardStyle}"/>
 				</Border>
 				<Border Style="{StaticResource CardBorderStyle}">
-					<ContentControl Content="{Binding Path=FlopCard2}" ContentTemplateSelector="{StaticResource CardTemplateSelector}" Style="{StaticResource CardStyle}"/>
+					<ContentControl Content="{Binding Path=FlopCard3}" ContentTemplateSelector="{StaticResource CardTemplateSelector}" Style="{StaticResource CardStyle}"/>
 				</Border>
 				<Border Style="{StaticResource CardBorderStyle}">
 					<ContentControl Content="{Binding Path=TurnCard}" ContentTemplateSelector="{StaticResource CardTemplateSelector}" Style="{StaticResource CardStyle}"/>
