@@ -96,15 +96,7 @@ namespace Model.Cards
 			var cards = new List<Card>(tableCards);
 			cards.AddRange(playerCards);
 
-			var cardDict = new Dictionary<CardRank, int>();
-			foreach (var i in cards)
-			{
-				if (cardDict.ContainsKey(i.Rank))
-					cardDict[i.Rank] = cardDict[i.Rank] + 1;
-				else
-					cardDict.Add(i.Rank, 1);
-			}
-
+			var cardDict = CountCards(cards);
 
 			foreach(var i in cardDict)
 				if (i.Value == 4)
@@ -193,6 +185,21 @@ namespace Model.Cards
 			}
 
 			return (maxSuit, max);
+		}
+
+
+		public static Dictionary<CardRank, int> CountCards(IEnumerable<Card> cards)
+		{
+			var cardDict = new Dictionary<CardRank, int>();
+			foreach (var i in cards)
+			{
+				if (cardDict.ContainsKey(i.Rank))
+					cardDict[i.Rank] = cardDict[i.Rank] + 1;
+				else
+					cardDict.Add(i.Rank, 1);
+			}
+
+			return cardDict;
 		}
 
 	}
