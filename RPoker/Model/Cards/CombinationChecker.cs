@@ -30,13 +30,11 @@ namespace Model.Cards
 			var comparer = new CardComparer();
 			cards.Sort(comparer);
 
-			int spadeCount = cards.Count(x => x.Suit == CardSuit.Spade);
-			int hearthCount = cards.Count(x => x.Suit == CardSuit.Hearth);
-			int diamondCount = cards.Count(x => x.Suit == CardSuit.Diamond);
-			int clubCount = cards.Count(x => x.Suit == CardSuit.Club);
+			var pair = MaxSuitCount(cards);
 
-			if (spadeCount < 5 || hearthCount < 5 || diamondCount < 5 || clubCount < 5)
-				return false;
+			if (pair.Item2 < 5) return false;
+
+			cards = cards.Where(x => x.Suit == pair.Item1).ToList();
 
 			if
 			(
