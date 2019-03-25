@@ -88,10 +88,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
-    <Compile Include="PlayerInterfaceWindow.xaml.cs">
-      <DependentUpon>PlayerInterfaceWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="PlayerView.xaml.cs">
       <DependentUpon>PlayerView.xaml</DependentUpon>
     </Compile>
@@ -146,9 +142,6 @@
     </Page>
     <Page Include="GameWindow.xaml">
       <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PlayerInterfaceWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PlayerView.xaml">
