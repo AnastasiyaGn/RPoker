@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Model.Cards;
 
 namespace Console
 {
@@ -10,7 +11,7 @@ namespace Console
 	{
 		static void Main(string[] args)
 		{
-			System.Console.WriteLine("Тестируй меня здесь");
+			var xP = new List<Card>() { Card.Get("S7") };
 		}
 	}
 }
