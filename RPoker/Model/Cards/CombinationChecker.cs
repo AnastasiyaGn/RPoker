@@ -137,12 +137,26 @@ namespace Model.Cards
 
 		public static bool IsTwoPair(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
 		{
-			return false;
+			var cards = new List<Card>(tableCards);
+			cards.AddRange(playerCards);
+
+			var dict = CountCards(cards);
+
+			var p = dict.Count(x => x.Value >= 2);
+
+			return p >= 2;
 		}
 
 		public static bool IsPair(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
 		{
-			return false;
+			var cards = new List<Card>(tableCards);
+			cards.AddRange(playerCards);
+
+			var dict = CountCards(cards);
+
+			int p = dict.Count(x => x.Value >= 2);
+
+			return p != 0;
 		}
 
 		public static bool IsHighCard(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
