@@ -93,6 +93,11 @@ namespace Model.Cards
 
 		#region Static data
 
+		public static Card Get(string card)
+		{
+			return new Card(BackSuitMapper[card[0].ToString()], BackRankMapper[card[1].ToString()]);
+		}
+
 		public static Dictionary<CardRank, string> RankMapper = new Dictionary<CardRank, string>()
 		{
 			{ CardRank.Two,   "2" },
@@ -108,6 +113,31 @@ namespace Model.Cards
 			{ CardRank.Queen, "Q" },
 			{ CardRank.King,  "K" },
 			{ CardRank.Ace,   "A" },
+		};
+
+		public static Dictionary<string, CardRank> BackRankMapper = new Dictionary<string, CardRank>()
+		{
+			{ "2", CardRank.Two },
+			{ "3", CardRank.Three },
+			{ "4", CardRank.Four },
+			{ "5", CardRank.Five },
+			{ "6", CardRank.Six },
+			{ "7", CardRank.Seven },
+			{ "8", CardRank.Eight },
+			{ "9", CardRank.Nine },
+			{ "10", CardRank.Ten },
+			{ "J", CardRank.Jack },
+			{ "Q", CardRank.Queen },
+			{ "K", CardRank.King },
+			{ "A", CardRank.Ace }
+		};
+
+		public static Dictionary<string, CardSuit> BackSuitMapper = new Dictionary<string, CardSuit>()
+		{
+			{ "C", CardSuit.Club },
+			{ "D", CardSuit.Diamond },
+			{ "H", CardSuit.Hearth },
+			{ "S", CardSuit.Spade },
 		};
 
 		public static Dictionary<CardSuit, string> SuitMapper = new Dictionary<CardSuit, string>()
