@@ -35,7 +35,7 @@ namespace Model.Cards
 			int diamondCount = cards.Count(x => x.Suit == CardSuit.Diamond);
 			int clubCount = cards.Count(x => x.Suit == CardSuit.Club);
 
-			if (spadeCount != 5 || hearthCount != 5 || diamondCount != 5 || clubCount != 5)
+			if (spadeCount < 5 || hearthCount < 5 || diamondCount < 5 || clubCount < 5)
 				return false;
 
 			if
