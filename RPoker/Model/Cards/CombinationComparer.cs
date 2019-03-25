@@ -9,90 +9,102 @@ namespace Model.Cards
 	{
 		public int Compare((IEnumerable<Card>, IEnumerable<Card>) x, (IEnumerable<Card>, IEnumerable<Card>) y)
 		{
-			var playerXCards = x.Item1;
-			var tableXCards = x.Item2;
-			var playerYCards = y.Item1;
-			var tableYCards = y.Item2;
+			var handXCards = x.Item1;
+			var handYCards = y.Item1;
+			var tableCards = x.Item2;
 		
-			Combination xComb = CombinationChecker.DetermineCombination(playerXCards, tableXCards);
-			Combination yComb = CombinationChecker.DetermineCombination(playerYCards, tableYCards);
+			Combination xComb = CombinationChecker.DetermineCombination(handXCards, tableCards);
+			Combination yComb = CombinationChecker.DetermineCombination(handYCards, tableCards);
 
 			if (xComb != yComb)
 				return (int)xComb - (int)yComb;
 
-			if (xComb == Combination.RoyalFlush)
-				return 0;
-			
-			if (xComb == yComb)
-			{
-				switch (xComb)
-				{
-					case Combination.StraightFlush:
 
-					case Combination.StraightFlush:
-						return CompareStraightFlush(playerXCards, tableXCards, playerYCards, tableYCards);
-				}					
+			switch (xComb)
+			{
+				case Combination.StraightFlush:
+					return CompareStraightFlush(handXCards, handYCards, tableCards);
+
+				case Combination.FourOfKind:
+					return CompareFourOfKind(handXCards, handYCards, tableCards);
+
+				case Combination.FullHouse:
+					return CompareFullHouse(handXCards, handYCards, tableCards);
+
+				case Combination.Flush:
+					return CompareFlush(handXCards, handYCards, tableCards);
+
+				case Combination.Straight:
+					return CompareStraight(handXCards, handYCards, tableCards);
+
+				case Combination.ThreeOfKind:
+					return CompareThreeOfKind(handXCards, handYCards, tableCards);
+
+				case Combination.TwoPair:
+					return CompareTwoPair(handXCards, handYCards, tableCards);
+
+				case Combination.Pair:
+					return ComparePair(handXCards, handYCards, tableCards);
+
+				case Combination.HighCard:
+					return CompareHighCard(handXCards, handYCards);
 			}
 
-			return 0;
+			return -1000;
 		}
 
 
-		private int CompareStraightFlush(IEnumerable<Card> playerXCards, IEnumerable<Card> tableXCards, IEnumerable<Card> playerYCards, IEnumerable<Card> tableYCards)
+		public int CompareStraightFlush(IEnumerable<Card> x, IEnumerable<Card> y, IEnumerable<Card> table)
 		{
-			var cardsX = new List<Card>(tableXCards);
-			cardsX.AddRange(playerXCards);
-			var cardsY = new List<Card>(tableYCards);
-			cardsY.AddRange(playerYCards);
+			var xAll = new List<Card>(x);
+			xAll.AddRange(table);
+			var yAll = new List<Card>(y);
+			yAll.AddRange(table);
 
-			var pair = MaxSuitCount(cardsX);
+			var sfX = ExtractStraightFlush(xAll).ToList();
+			var sfY = ExtractStraightFlush(yAll).ToList();
 
-			cardsX = cardsX.Where(x => x.Suit == pair.Item1).ToList();
-			cardsY = cardsY.Where(x => x.Suit == pair.Item1).ToList();
+			var comp = new CardComparer();
 
-			CardComparer comparator = new CardComparer();
-			cardsX.Sort(comparator);
-			cardsY.Sort(comparator);
-
-			return comparator.Compare(cardsX.Last(), cardsY.Last());
+			return comp.Compare(sfX.Last(), sfY.Last());
 		}
 
-		private int CompareKape(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
+		public int CompareFourOfKind(IEnumerable<Card> x, IEnumerable<Card> y, IEnumerable<Card> table)
 		{
 			return 0;
 		}
 
-		private int CompareFullHouse(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
+		public int CompareFullHouse(IEnumerable<Card> x, IEnumerable<Card> y, IEnumerable<Card> table)
 		{
 			return 0;
 		}
 
-		private int CompareFlush(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
+		public int CompareFlush(IEnumerable<Card> x, IEnumerable<Card> y, IEnumerable<Card> table)
 		{
 			return 0;
 		}
 
-		private int CompareStraight(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
+		public int CompareStraight(IEnumerable<Card> x, IEnumerable<Card> y, IEnumerable<Card> table)
 		{
 			return 0;
 		}
 
-		private int CompareThreeOfKind(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
+		public int CompareThreeOfKind(IEnumerable<Card> x, IEnumerable<Card> y, IEnumerable<Card> table)
 		{
 			return 0;
 		}
 
-		private int CompareTwoPair(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
+		private int CompareTwoPair(IEnumerable<Card> x, IEnumerable<Card> y, IEnumerable<Card> table)
 		{
 			return 0;
 		}
 
-		private int ComparePair(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
+		public int ComparePair(IEnumerable<Card> x, IEnumerable<Card> y, IEnumerable<Card> table)
 		{
 			return 0;
 		}
 
-		private int CompareHighCard(IEnumerable<Card> playerXCards, IEnumerable<Card> playerYCards)
+		public int CompareHighCard(IEnumerable<Card> playerXCards, IEnumerable<Card> playerYCards)
 		{
 			var cardsX = new List<Card>(playerXCards);
 			var cardsY = new List<Card>(playerYCards);
@@ -104,35 +116,45 @@ namespace Model.Cards
 			return comparator.Compare(cardsX.Last(), cardsY.Last());
 		}
 
-		public static (CardSuit, int) MaxSuitCount(IEnumerable<Card> cards)
+
+		public IEnumerable<Card> ExtractStraightFlush(IEnumerable<Card> x)
 		{
-			int hC = cards.Count(x => x.Suit == CardSuit.Hearth);
-			int sC = cards.Count(x => x.Suit == CardSuit.Spade);
-			int dC = cards.Count(x => x.Suit == CardSuit.Diamond);
-			int cC = cards.Count(x => x.Suit == CardSuit.Club);
+			var pair = CombinationChecker.MaxSuitCount(x);
+			var maxSuit = pair.Item1;
 
-			CardSuit maxSuit = CardSuit.Hearth;
-			int max = hC;
+			var list = x.Where(p => p.Suit == maxSuit).ToList();
 
-			if (sC > max)
+			bool haveAce = list.Count(p => p.Rank == CardRank.Ace && p.Suit == maxSuit) == 1;
+			if (haveAce)
 			{
-				maxSuit = CardSuit.Spade;
-				max = sC;
+				var outList = new List<Card>();
+				outList.Add(list.Find(p => p.Rank == CardRank.Ace));
+				outList.Add(list.Find(p => p.Rank == CardRank.Two));
+				outList.Add(list.Find(p => p.Rank == CardRank.Three));
+				outList.Add(list.Find(p => p.Rank == CardRank.Four));
+				outList.Add(list.Find(p => p.Rank == CardRank.Five));
+
+				return outList;
 			}
 
-			if (dC > max)
-			{
-				maxSuit = CardSuit.Diamond;
-				max = dC;
-			}
+			var forDel = new List<Card>();
+			var comp = new CardComparer();
+			list.Sort(comp);
 
-			if (cC > max)
-			{
-				maxSuit = CardSuit.Club;
-				max = cC;
-			}
+			for (int i = 0; i < list.Count - 1 && comp.Compare(list[i], list[i + 1]) != -1; ++i)
+				forDel.Add(list[i]);
 
-			return (maxSuit, max);
+			list.RemoveAll(p => forDel.Contains(p));
+			list.Sort(comp);
+			forDel.Clear();
+
+			for (int i = list.Count - 1; i > 0 && comp.Compare(list[i], list[i - 1]) != 1; --i)
+				forDel.Add(list[i]);
+
+			list.RemoveAll(p => forDel.Contains(p));
+			list.Sort(comp);
+
+			return list;
 		}
 	}
 }
