@@ -1,11 +1,14 @@
-﻿<Window x:Class="View.GameWindow"
+﻿<reactiveui:ReactiveWindow x:Class="View.GameWindow"
+				x:TypeArguments="viewModel:GameViewModel"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:View"
+				xmlns:reactiveui="http://reactiveui.net"
+				xmlns:viewModel="clr-namespace:ViewModel;assembly=ViewModel"
         mc:Ignorable="d"
-        Title="RPoker" Height="600" Width="1000" x:Name="MyWindow">
+        Title="RPoker" Height="600" Width="1000">
 	<Grid Background="SaddleBrown">
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition/>
@@ -33,7 +36,7 @@
 			<RowDefinition/>
 		</Grid.RowDefinitions>
 		<Border Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="3"  Style="{StaticResource PlayerSquareStyle}" >
-			<local:PlayerView ViewModel="{Binding Path=FirstPlayer}"/>
+			<local:PlayerView x:Name="xPlayer1"/>
 		</Border>
 		<Border Grid.Column="1" Grid.Row="0" Style="{StaticResource PlayerSquareStyle}"></Border>
 		<Border Grid.Column="3" Grid.Row="0" Style="{StaticResource PlayerSquareStyle}"></Border>
@@ -42,25 +45,25 @@
 		<Border Grid.Column="3" Grid.Row="2" Style="{StaticResource PlayerSquareStyle}"></Border>
 		<Border Grid.Column="3" Grid.ColumnSpan="6" Grid.Row="3" Grid.RowSpan="3" Style="{StaticResource TableStyle}">
 			<StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-				<TextBlock HorizontalAlignment="Center" Padding="0,0,0,20" Style="{StaticResource PotTextStyle}" Text="{Binding Path=Pot, StringFormat=Pot: {0}}"/>
+				<TextBlock x:Name="xPot" HorizontalAlignment="Center" Padding="0,0,0,20" Style="{StaticResource PotTextStyle}"/>
 				<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
 					<Border Style="{StaticResource CardBorderStyle}">
-						<ContentControl Content="{Binding Path=FlopCard1}" ContentTemplateSelector="{StaticResource CardTemplateSelector}" Style="{StaticResource CardStyle}"/>
+						<ContentControl x:Name="xFlopCard1" ContentTemplateSelector="{StaticResource CardTemplateSelector}" Style="{StaticResource CardStyle}"/>
 					</Border>
 					<Border Style="{StaticResource CardBorderStyle}">
-						<ContentControl Content="{Binding Path=FlopCard2}" ContentTemplateSelector="{StaticResource CardTemplateSelector}" Style="{StaticResource CardStyle}"/>
+						<ContentControl x:Name="xFlopCard2" ContentTemplateSelector="{StaticResource CardTemplateSelector}" Style="{StaticResource CardStyle}"/>
 					</Border>
 					<Border Style="{StaticResource CardBorderStyle}">
-						<ContentControl Content="{Binding Path=FlopCard3}" ContentTemplateSelector="{StaticResource CardTemplateSelector}" Style="{StaticResource CardStyle}"/>
+						<ContentControl x:Name="xFlopCard3" ContentTemplateSelector="{StaticResource CardTemplateSelector}" Style="{StaticResource CardStyle}"/>
 					</Border>
 					<Border Style="{StaticResource CardBorderStyle}">
-						<ContentControl Content="{Binding Path=TurnCard}" ContentTemplateSelector="{StaticResource CardTemplateSelector}" Style="{StaticResource CardStyle}"/>
+						<ContentControl x:Name="xTurnCard" ContentTemplateSelector="{StaticResource CardTemplateSelector}" Style="{StaticResource CardStyle}"/>
 					</Border>
 					<Border Style="{StaticResource CardBorderStyle}">
-						<ContentControl Content="{Binding Path=RiverCard}" ContentTemplateSelector="{StaticResource CardTemplateSelector}" Style="{StaticResource CardStyle}"/>
+						<ContentControl x:Name="xRiverCard" ContentTemplateSelector="{StaticResource CardTemplateSelector}" Style="{StaticResource CardStyle}"/>
 					</Border>
 				</StackPanel>
 			</StackPanel>
 		</Border>
 	</Grid>
-</Window>
+</reactiveui:ReactiveWindow>

@@ -29,8 +29,8 @@
 		<Button x:Name="xRaise" Grid.Row="1" Grid.Column="2" Style="{StaticResource GameButtonStyle}" Content="R"/>
 		<Button x:Name="xCall" Grid.Row="2" Grid.Column="2" Style="{StaticResource GameButtonStyle}" Content="C"/>
 		<TextBlock x:Name="xCash" Grid.Row="2" Grid.Column="1" FontSize="20" Foreground="White" Grid.ColumnSpan="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-		<Image x:Name="xIsDealer" Grid.Row="2" Source="CardImg/D.png" />
-		<Image x:Name="xIsSmallBlind" Grid.Row="2" Source="CardImg/SB.png"/>
-		<Image x:Name="xIsBigBlind" Grid.Row="2" Source="CardImg/BB.png"/>
+		<Image x:Name="xIsDealer" Grid.Row="2" Width="40" Height="40" Source="CardImg/D.png" />
+		<Image x:Name="xIsSmallBlind" Grid.Row="2" Width="40" Height="40" Source="CardImg/SB.png"/>
+		<Image x:Name="xIsBigBlind" Grid.Row="2" Width="40" Height="40" Source="CardImg/BB.png"/>
 	</Grid>
 </reactiveui:ReactiveUserControl>

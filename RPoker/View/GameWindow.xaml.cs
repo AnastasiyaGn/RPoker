@@ -14,28 +14,41 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Model.Cards;
 using ViewModel;
+using ReactiveUI;
+using System.Reactive.Disposables;
 
 namespace View
 {
-    /// <summary>
-    /// Логика взаимодействия для GameWindow.xaml
-    /// </summary>
-    public partial class GameWindow : Window
+	/// <summary>
+	/// Логика взаимодействия для GameWindow.xaml
+	/// </summary>
+	public partial class GameWindow : ReactiveWindow<GameViewModel>
 	{
-        public GameWindow()
+		public GameWindow()
 		{
 			InitializeComponent();
-			var vm = new GameViewModel();
-			DataContext = vm;
-			vm.DoFlopCard();
 
-			vm.FlopCard2.IsHide = true;
+			ViewModel = new GameViewModel();
 
-			vm.DoTurnCard();
-			vm.DoRiverCard();
+			ViewModel.DoFlopCard();
+			ViewModel.DealCards();
+
+			this.WhenActivated(d =>
+			{
+				this.OneWayBind(ViewModel, vm => vm.FirstPlayer, v => v.xPlayer1.ViewModel).DisposeWith(d);
+
+				this.OneWayBind(ViewModel, vm => vm.Pot, v => v.xPot.Text, x => $"Pot: {x}").DisposeWith(d);
+
+				this.OneWayBind(ViewModel, vm => vm.FlopCard1, v => v.xFlopCard1.Content).DisposeWith(d);
+				this.OneWayBind(ViewModel, vm => vm.FlopCard2, v => v.xFlopCard2.Content).DisposeWith(d);
+				this.OneWayBind(ViewModel, vm => vm.FlopCard3, v => v.xFlopCard3.Content).DisposeWith(d);
+				this.OneWayBind(ViewModel, vm => vm.TurnCard, v => v.xTurnCard.Content).DisposeWith(d);
+				this.OneWayBind(ViewModel, vm => vm.RiverCard, v => v.xRiverCard.Content).DisposeWith(d);
+
+			});
 
 		}
-    }
+	}
 
-		
+
 }
