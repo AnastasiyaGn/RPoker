@@ -85,6 +85,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="PlayerInterfaceWindow.xaml.cs">
       <DependentUpon>PlayerInterfaceWindow.xaml</DependentUpon>
     </Compile>
@@ -145,9 +146,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Converters\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="CardImg\DA.png" />
     <Resource Include="CardImg\D10.png" />
@@ -161,6 +160,8 @@
     <Resource Include="CardImg\D9.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="CardImg\D.png" />
+    <Resource Include="CardImg\SB.png" />
     <Resource Include="CardImg\CA.png" />
     <Resource Include="CardImg\C10.png" />
     <Resource Include="CardImg\C2.png" />
@@ -204,6 +205,7 @@
     <Resource Include="CardImg\SK.png" />
     <Resource Include="CardImg\SQ.png" />
     <Resource Include="CardImg\CardBackSide.png" />
+    <Resource Include="CardImg\BB.png" />
     <Content Include="CardImg\check.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
