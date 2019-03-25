@@ -81,7 +81,25 @@ namespace Model.Cards
 
 		public int CompareFlush(IEnumerable<Card> x, IEnumerable<Card> y, IEnumerable<Card> table)
 		{
-			return 0;
+			var pair = CombinationChecker.MaxSuitCount(table);
+			var xTable = table.Where(p => p.Suit == pair.Item1).ToList();
+
+			var xHand = x.Where(p => p.Suit == pair.Item1).ToList();
+			var yHand = y.Where(p => p.Suit == pair.Item1).ToList();
+			if (xHand.Count == 0 && yHand.Count == 0)
+				return 0;
+
+			if (xHand.Count == 0 && yHand.Count != 0)
+				return -1;
+
+			if (xHand.Count != 0 && yHand.Count == 0)
+				return 1;
+
+			var comp = new CardComparer();
+			xHand.Sort(comp);
+			yHand.Sort(comp);
+
+			return comp.Compare(xHand.Last(), yHand.Last());
 		}
 
 		public int CompareStraight(IEnumerable<Card> x, IEnumerable<Card> y, IEnumerable<Card> table)
@@ -125,7 +143,8 @@ namespace Model.Cards
 			var list = x.Where(p => p.Suit == maxSuit).ToList();
 
 			bool haveAce = list.Count(p => p.Rank == CardRank.Ace && p.Suit == maxSuit) == 1;
-			if (haveAce)
+			bool haveTwo = list.Count(p => p.Rank == CardRank.Two && p.Suit == maxSuit) == 1;
+			if (haveAce && haveTwo)
 			{
 				var outList = new List<Card>();
 				outList.Add(list.Find(p => p.Rank == CardRank.Ace));
@@ -156,5 +175,6 @@ namespace Model.Cards
 
 			return list;
 		}
+
 	}
 }
