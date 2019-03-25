@@ -81,6 +81,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AIView.xaml.cs">
+      <DependentUpon>AIView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AIViewWindow.xaml.cs">
       <DependentUpon>AIViewWindow.xaml</DependentUpon>
     </Compile>
@@ -134,6 +137,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="AIView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AIViewWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -8,8 +8,8 @@
 				xmlns:reactiveui="http://reactiveui.net"
 				xmlns:viewModel="clr-namespace:ViewModel;assembly=ViewModel"
         mc:Ignorable="d"
-        Title="RPoker" Height="600" Width="1000">
-	<Grid Background="SaddleBrown">
+        Title="RPoker" Height="800" Width="1100">
+	<Grid Background="#621800">
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition/>
 			<ColumnDefinition/>
@@ -35,14 +35,25 @@
 			<RowDefinition/>
 			<RowDefinition/>
 		</Grid.RowDefinitions>
-		<Border Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="3"  Style="{StaticResource PlayerSquareStyle}" >
-			<local:PlayerView x:Name="xPlayer1"/>
+		<Border Grid.Column="3" Grid.Row="6" Grid.ColumnSpan="3" Grid.RowSpan="3" Style="{StaticResource PlayerSquareStyle}" >
+			<local:PlayerView x:Name="xPlayer1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 		</Border>
-		<Border Grid.Column="1" Grid.Row="0" Style="{StaticResource PlayerSquareStyle}"></Border>
-		<Border Grid.Column="3" Grid.Row="0" Style="{StaticResource PlayerSquareStyle}"></Border>
-		<Border Grid.Column="4" Grid.Row="1" Style="{StaticResource PlayerSquareStyle}"></Border>
-		<Border Grid.Column="1" Grid.Row="2" Style="{StaticResource PlayerSquareStyle}"></Border>
-		<Border Grid.Column="3" Grid.Row="2" Style="{StaticResource PlayerSquareStyle}"></Border>
+		<Border Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="4" Style="{StaticResource PlayerSquareStyle}">
+			<local:AIView x:Name="xPlayer2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+		</Border>
+		<Border Grid.Column="3" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="3" Style="{StaticResource PlayerSquareStyle}">
+			<local:AIView x:Name="xPlayer3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+		</Border>
+		<Border Grid.Column="6" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="3" Style="{StaticResource PlayerSquareStyle}">
+			<local:AIView x:Name="xPlayer4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+		</Border>
+		<Border Grid.Column="9" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="4" Style="{StaticResource PlayerSquareStyle}">
+			<local:AIView x:Name="xPlayer5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+		</Border>
+		<Border Grid.Column="6" Grid.Row="6" Grid.ColumnSpan="3" Grid.RowSpan="3" Style="{StaticResource PlayerSquareStyle}">
+			<local:AIView x:Name="xPlayer6" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+		</Border>
+
 		<Border Grid.Column="3" Grid.ColumnSpan="6" Grid.Row="3" Grid.RowSpan="3" Style="{StaticResource TableStyle}">
 			<StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
 				<TextBlock x:Name="xPot" HorizontalAlignment="Center" Padding="0,0,0,20" Style="{StaticResource PotTextStyle}"/>

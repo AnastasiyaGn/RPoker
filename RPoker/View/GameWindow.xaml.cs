@@ -36,6 +36,11 @@ namespace View
 			this.WhenActivated(d =>
 			{
 				this.OneWayBind(ViewModel, vm => vm.FirstPlayer, v => v.xPlayer1.ViewModel).DisposeWith(d);
+				this.OneWayBind(ViewModel, vm => vm.SecondPlayer, v => v.xPlayer2.ViewModel).DisposeWith(d);
+				this.OneWayBind(ViewModel, vm => vm.ThirdPlayer, v => v.xPlayer3.ViewModel).DisposeWith(d);
+				this.OneWayBind(ViewModel, vm => vm.FourthPlayer, v => v.xPlayer4.ViewModel).DisposeWith(d);
+				this.OneWayBind(ViewModel, vm => vm.FifthPlayer, v => v.xPlayer5.ViewModel).DisposeWith(d);
+				this.OneWayBind(ViewModel, vm => vm.SixthPlayer, v => v.xPlayer6.ViewModel).DisposeWith(d);
 
 				this.OneWayBind(ViewModel, vm => vm.Pot, v => v.xPot.Text, x => $"Pot: {x}").DisposeWith(d);
 
