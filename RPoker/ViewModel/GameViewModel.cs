@@ -87,12 +87,12 @@ namespace ViewModel
 			set { this.RaiseAndSetIfChanged(ref _startCash, value, nameof(StartCash)); }
 		}
 
-		public PlayerBaseViewModel FirstPlayer { get; private set; }
-		public PlayerBaseViewModel SecondPlayer { get; private set; }
-		public PlayerBaseViewModel ThirdPlayer { get; private set; }
-		public PlayerBaseViewModel FourthPlayer { get; private set; }
-		public PlayerBaseViewModel FifthPlayer { get; private set; }
-		public PlayerBaseViewModel SixthPlayer { get; private set; }
+		public PlayerViewModel FirstPlayer { get; private set; }
+		public AIViewModel SecondPlayer { get; private set; }
+		public AIViewModel ThirdPlayer { get; private set; }
+		public AIViewModel FourthPlayer { get; private set; }
+		public AIViewModel FifthPlayer { get; private set; }
+		public AIViewModel SixthPlayer { get; private set; }
 
 		public Card FlopCard1
 		{
@@ -209,33 +209,33 @@ namespace ViewModel
 			_players = new List<PlayerBaseViewModel>();
 			_cardsOnTable = new List<Card>();
 
-			FirstPlayer = new PlayerBaseViewModel()
+			FirstPlayer = new PlayerViewModel()
 			{
 				PlayerState = new PlayerState() { Cash = StartCash, IsDealer = true, Name = "Игрок", IsSmallBlind = false, IsBigBlind = false, Number = 0 },
 				TableInfo = this
 			};
 
-			SecondPlayer = new PlayerBaseViewModel()
+			SecondPlayer = new AIViewModel()
 			{
 				PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 1", IsSmallBlind = true, IsBigBlind = false, Number = 1},
 				TableInfo = this
 			};
-			ThirdPlayer = new PlayerBaseViewModel()
+			ThirdPlayer = new AIViewModel()
 			{
 				PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 2", IsSmallBlind = false, IsBigBlind = true, Number = 2},
 				TableInfo = this
 			};
-			FourthPlayer = new PlayerBaseViewModel()
+			FourthPlayer = new AIViewModel()
 			{
 				PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 3", IsSmallBlind = false, IsBigBlind = false, Number = 3},
 				TableInfo = this
 			};
-			FifthPlayer = new PlayerBaseViewModel()
+			FifthPlayer = new AIViewModel()
 			{
 				PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 4", IsSmallBlind = false, IsBigBlind = false, Number = 4},
 				TableInfo = this
 			};
-			SixthPlayer = new PlayerBaseViewModel()
+			SixthPlayer = new AIViewModel()
 			{
 				PlayerState = new PlayerState() { Cash = StartCash, IsDealer = false, Name = "Компьютер 5", IsSmallBlind = false, IsBigBlind = false, Number = 5},
 				TableInfo = this
