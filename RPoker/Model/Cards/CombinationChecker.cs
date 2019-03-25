@@ -52,9 +52,6 @@ namespace Model.Cards
 
 		public static bool IsStraightFlush(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
 		{
-			if (IsRoyalFlush(playerCards, tableCards))
-				return false;
-
 			var cards = new List<Card>(tableCards);
 			cards.AddRange(playerCards);
 
@@ -96,6 +93,23 @@ namespace Model.Cards
 
 		public static bool IsKape(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
 		{
+			var cards = new List<Card>(tableCards);
+			cards.AddRange(playerCards);
+
+			var cardDict = new Dictionary<CardRank, int>();
+			foreach (var i in cards)
+			{
+				if (cardDict.ContainsKey(i.Rank))
+					cardDict[i.Rank] = cardDict[i.Rank] + 1;
+				else
+					cardDict.Add(i.Rank, 1);
+			}
+
+
+			foreach(var i in cardDict)
+				if (i.Value == 4)
+					return true;
+
 			return false;
 		}
 
