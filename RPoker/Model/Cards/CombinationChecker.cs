@@ -69,6 +69,20 @@ namespace Model.Cards
 
 		public static bool IsFlush(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
 		{
+			var cards = new List<Card>(tableCards);
+			cards.AddRange(playerCards);
+
+			var comparer = new CardComparer();
+			cards.Sort(comparer);
+
+			int spadeCount = cards.Count(x => x.Suit == CardSuit.Spade);
+			int hearthCount = cards.Count(x => x.Suit == CardSuit.Hearth);
+			int diamondCount = cards.Count(x => x.Suit == CardSuit.Diamond);
+			int clubCount = cards.Count(x => x.Suit == CardSuit.Club);
+
+			if (spadeCount >= 5 || hearthCount >= 5 || diamondCount >= 5 || clubCount >= 5)
+				return true;
+
 			return false;
 		}
 
