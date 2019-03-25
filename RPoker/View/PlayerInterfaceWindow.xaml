@@ -27,8 +27,8 @@
 		<Button Grid.Row="1" Grid.Column="2" Style="{StaticResource GameButtonStyle}" Content="R" Command="{Binding Path=Raise}"/>
 		<Button Grid.Row="2" Grid.Column="2" Style="{StaticResource GameButtonStyle}" Content="C" Command="{Binding Path=Call}"/>
 		<TextBlock Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Path=PlayerState.Cash}"/>
-		<Image Grid.Row="2" Source="CardImg/D.png" Visibility="{Binding Path=vm.PlayerState.IsDealer, Converter={StaticResource BoolToVisibilityConverter}}"/>
-		<Image Grid.Row="2" Source="CardImg/SB.png" Visibility="{Binding Path=vm.PlayerState.IsSmallBlind, Converter={StaticResource BoolToVisibilityConverter}}"/>
-		<Image Grid.Row="2" Source="CardImg/BB.png" Visibility="{Binding Path=vm.PlayerState.IsBigBlind, Converter={StaticResource BoolToVisibilityConverter}}"/>
+		<Image Grid.Row="2" Source="CardImg/D.png" Visibility="{Binding Path=PlayerState.IsDealer, Converter={StaticResource BoolToVisibilityConverter}}"/>
+		<Image Grid.Row="2" Source="CardImg/SB.png" Visibility="{Binding Path=PlayerState.IsSmallBlind, Converter={StaticResource BoolToVisibilityConverter}}"/>
+		<Image Grid.Row="2" Source="CardImg/BB.png" Visibility="{Binding Path=PlayerState.IsBigBlind, Converter={StaticResource BoolToVisibilityConverter}}"/>
 	</Grid>
 </Window>

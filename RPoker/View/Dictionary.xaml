@@ -57,7 +57,6 @@
 	<Style x:Key="PotTextStyle" TargetType="TextBlock">
 		<Setter Property="FontSize" Value="20"/>
 		<Setter Property="Foreground" Value="White"/>
-		<Setter Property="Text" Value="{Binding Path=., StringFormat=Pot: {0}}"/>
 	</Style>
 	<!--#region Card data templates-->
 
