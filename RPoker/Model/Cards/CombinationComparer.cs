@@ -9,10 +9,19 @@ namespace Model.Cards
 	{
 		public int Compare((IEnumerable<Card>, IEnumerable<Card>) x, (IEnumerable<Card>, IEnumerable<Card>) y)
 		{
-			var playerCards = x.Item1;
-			var tableCards = x.Item2;
+			var playerXCards = x.Item1;
+			var tableXCards = x.Item2;
+			var playerYCards = y.Item1;
+			var tableYCards = y.Item2;
+		
+			Combination xComb = CombinationChecker.DetermineCombination(playerXCards, tableXCards);
+			Combination yComb = CombinationChecker.DetermineCombination(playerYCards, tableYCards);
+
+			if (xComb != yComb)
+				return (int)xComb - (int)yComb;
+
+
 			return 0;
 		}
-
 	}
 }
