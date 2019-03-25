@@ -145,14 +145,24 @@ namespace Model.Cards
 			return false;
 		}
 
-		public static bool IsHightCard(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
+		public static bool IsHighCard(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
 		{
 			return false;
 		}
 
 		public static Combination DetermineCombination(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
 		{
-			return Combination.FullHouse;
+			if (IsRoyalFlush(playerCards, tableCards)) return Combination.RoyalFlush;
+			if (IsStraightFlush(playerCards, tableCards)) return Combination.StraightFlush;
+			if (IsKape(playerCards, tableCards)) return Combination.Kape;
+			if (IsFullHouse(playerCards, tableCards)) return Combination.FullHouse;
+			if (IsFlush(playerCards, tableCards)) return Combination.Flush;
+			if (IsStraight(playerCards, tableCards)) return Combination.Straight;
+			if (IsThreeOfKind(playerCards, tableCards)) return Combination.ThreeOfKind;
+			if (IsTwoPair(playerCards, tableCards)) return Combination.TwoPair;
+			if (IsPair(playerCards, tableCards)) return Combination.Pair;
+
+			return Combination.HighCard;
 		}
 
 
