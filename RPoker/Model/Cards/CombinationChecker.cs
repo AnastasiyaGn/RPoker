@@ -54,6 +54,45 @@ namespace Model.Cards
 
 		public static bool IsStraightFlush(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
 		{
+			if (IsRoyalFlush(playerCards, tableCards))
+				return false;
+
+			var cards = new List<Card>(tableCards);
+			cards.AddRange(playerCards);
+
+			var comparer = new CardComparer();
+			cards.Sort(comparer);
+
+			var pair = MaxSuitCount(cards);
+			CardSuit maxSuit = pair.Item1;
+			int max = pair.Item2;
+
+			if (max < 5) return false;
+
+			bool haveAce = cards.Count(x => x.Rank == CardRank.Ace && x.Suit == maxSuit) == 1;
+			bool haveTwo = cards.Count(x => x.Rank == CardRank.Two && x.Suit == maxSuit) == 1;
+
+			if (haveTwo && haveAce)
+			{
+				if 
+				(
+					cards.Exists(x => x.Rank == CardRank.Three && x.Suit == maxSuit) &&
+					cards.Exists(x => x.Rank == CardRank.Four && x.Suit == maxSuit) &&
+					cards.Exists(x => x.Rank == CardRank.Five && x.Suit == maxSuit)
+				) return true;
+			}
+
+			for (int i = 0; i < cards.Count - 5; ++i)
+			{
+				bool isSequence = true;
+				for (int j = 0; j < 4 && isSequence; ++j)
+				{
+					isSequence = comparer.Compare(cards[i + j], cards[i + j + 1]) == -1;
+				}
+
+				if (isSequence) return true;
+			}
+
 			return false;
 		}
 
@@ -75,12 +114,8 @@ namespace Model.Cards
 			var comparer = new CardComparer();
 			cards.Sort(comparer);
 
-			int spadeCount = cards.Count(x => x.Suit == CardSuit.Spade);
-			int hearthCount = cards.Count(x => x.Suit == CardSuit.Hearth);
-			int diamondCount = cards.Count(x => x.Suit == CardSuit.Diamond);
-			int clubCount = cards.Count(x => x.Suit == CardSuit.Club);
-
-			if (spadeCount >= 5 || hearthCount >= 5 || diamondCount >= 5 || clubCount >= 5)
+			var pair = MaxSuitCount(cards);
+			if (pair.Item2 >= 5)
 				return true;
 
 			return false;
@@ -114,6 +149,38 @@ namespace Model.Cards
 		public static Combination DetermineCombination(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
 		{
 			return Combination.FullHouse;
+		}
+
+
+		public static (CardSuit, int) MaxSuitCount(IEnumerable<Card> cards)
+		{
+			int hC = cards.Count(x => x.Suit == CardSuit.Hearth);
+			int sC = cards.Count(x => x.Suit == CardSuit.Spade);
+			int dC = cards.Count(x => x.Suit == CardSuit.Diamond);
+			int cC = cards.Count(x => x.Suit == CardSuit.Club);
+
+			CardSuit maxSuit = CardSuit.Hearth;
+			int max = hC;
+
+			if (sC > max)
+			{
+				maxSuit = CardSuit.Spade;
+				max = sC;
+			}
+
+			if (dC > max)
+			{
+				maxSuit = CardSuit.Diamond;
+				max = dC;
+			}
+
+			if (cC > max)
+			{
+				maxSuit = CardSuit.Club;
+				max = cC;
+			}
+
+			return (maxSuit, max);
 		}
 
 	}
