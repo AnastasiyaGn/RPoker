@@ -15,7 +15,7 @@ namespace Model.Cards
 		Straight = 5,
     Flush = 6,
 		FullHouse = 7,
-		Kape = 8,
+		FourOfKind = 8,
 		StraightFlush = 9,
 		RoyalFlush = 10
 	};
@@ -91,7 +91,7 @@ namespace Model.Cards
 			return false;
 		}
 
-		public static bool IsKape(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
+		public static bool IsFourOfKind(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
 		{
 			var cards = new List<Card>(tableCards);
 			cards.AddRange(playerCards);
@@ -107,7 +107,7 @@ namespace Model.Cards
 
 		public static bool IsFullHouse(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
 		{
-			return false;
+			return true;
 		}
 
 		public static bool IsFlush(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
@@ -132,7 +132,13 @@ namespace Model.Cards
 
 		public static bool IsThreeOfKind(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
 		{
-			return false;
+			var cards = new List<Card>(tableCards);
+			cards.AddRange(playerCards);
+
+			var dict = CountCards(cards);
+			var p = dict.Count(x => x.Value >= 3);
+
+			return p > 0;
 		}
 
 		public static bool IsTwoPair(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
@@ -144,7 +150,7 @@ namespace Model.Cards
 
 			var p = dict.Count(x => x.Value >= 2);
 
-			return p >= 2;
+			return p == 2;
 		}
 
 		public static bool IsPair(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
@@ -168,7 +174,7 @@ namespace Model.Cards
 		{
 			if (IsRoyalFlush(playerCards, tableCards)) return Combination.RoyalFlush;
 			if (IsStraightFlush(playerCards, tableCards)) return Combination.StraightFlush;
-			if (IsKape(playerCards, tableCards)) return Combination.Kape;
+			if (IsFourOfKind(playerCards, tableCards)) return Combination.FourOfKind;
 			if (IsFullHouse(playerCards, tableCards)) return Combination.FullHouse;
 			if (IsFlush(playerCards, tableCards)) return Combination.Flush;
 			if (IsStraight(playerCards, tableCards)) return Combination.Straight;
