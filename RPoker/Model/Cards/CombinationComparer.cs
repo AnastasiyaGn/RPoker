@@ -27,7 +27,8 @@ namespace Model.Cards
 			{
 				switch (xComb)
 				{
-					case Combination.StraightFlush:
+					case Combination.RoyalFlush:
+						return CompareHighCard(playerXCards, playerYCards);
 
 					case Combination.StraightFlush:
 						return CompareStraightFlush(playerXCards, tableXCards, playerYCards, tableYCards);
