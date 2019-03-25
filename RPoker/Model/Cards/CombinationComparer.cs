@@ -28,6 +28,8 @@ namespace Model.Cards
 				switch (xComb)
 				{
 					case Combination.StraightFlush:
+
+					case Combination.StraightFlush:
 						return CompareStraightFlush(playerXCards, tableXCards, playerYCards, tableYCards);
 				}					
 			}
@@ -88,6 +90,18 @@ namespace Model.Cards
 		private int ComparePair(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
 		{
 			return 0;
+		}
+
+		private int CompareHighCard(IEnumerable<Card> playerXCards, IEnumerable<Card> playerYCards)
+		{
+			var cardsX = new List<Card>(playerXCards);
+			var cardsY = new List<Card>(playerYCards);
+
+			CardComparer comparator = new CardComparer();
+			cardsX.Sort(comparator);
+			cardsY.Sort(comparator);
+
+			return comparator.Compare(cardsX.Last(), cardsY.Last());
 		}
 
 		public static (CardSuit, int) MaxSuitCount(IEnumerable<Card> cards)
