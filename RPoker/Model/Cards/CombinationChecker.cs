@@ -107,7 +107,14 @@ namespace Model.Cards
 
 		public static bool IsFullHouse(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
 		{
-			return true;
+			var cards = new List<Card>(tableCards);
+			cards.AddRange(playerCards);
+
+			var dict = CountCards(cards);
+
+			var p = dict.Count(x => x.Value >= 3);
+
+			return p == 2;
 		}
 
 		public static bool IsFlush(IEnumerable<Card> playerCards, IEnumerable<Card> tableCards)
