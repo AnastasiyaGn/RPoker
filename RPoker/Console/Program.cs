@@ -11,7 +11,15 @@ namespace Console
 	{
 		static void Main(string[] args)
 		{
-			var xP = new List<Card>() { Card.Get("S7") };
-		}
+            Test test = new Test();
+            //test.Test_1();
+            test.Test_1();
+            test.Test_2();
+            test.Test_3();
+            test.Test_4();
+            test.Test_5();
+            test.Test_6();
+            test.Test_7();
+        }
 	}
 }
