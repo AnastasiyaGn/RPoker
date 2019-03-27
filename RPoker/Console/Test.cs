@@ -10,6 +10,7 @@ namespace Console
 {
     class Test
     {
+        //тест на рояль флеш
         public void Test_1()
         {
 
@@ -103,6 +104,7 @@ namespace Console
             return true;
         }
 
+        //тест на пару
         public void Test_3()
         {
             var Player_1 = new List<Card>();
@@ -134,6 +136,7 @@ namespace Console
             };
         }
 
+        //TwoPair
         public void Test_4()
         {
             var Player_1 = new List<Card>();
@@ -165,6 +168,7 @@ namespace Console
             };
         }
 
+        //ThreeOfKind
         public void Test_5()
         {
             var Player_1 = new List<Card>();
@@ -196,6 +200,8 @@ namespace Console
             };
         }
 
+
+        //тест на стрейт
         public void Test_6()
         {
             var Player_1 = new List<Card>();
@@ -230,6 +236,7 @@ namespace Console
             };
         }
 
+        //Flush
         public void Test_7()
         {
             var Player_1 = new List<Card>();

@@ -125,7 +125,7 @@ namespace Model.Cards
 			{ "7", CardRank.Seven },
 			{ "8", CardRank.Eight },
 			{ "9", CardRank.Nine },
-			{ "10", CardRank.Ten },
+			{ "1", CardRank.Ten },
 			{ "J", CardRank.Jack },
 			{ "Q", CardRank.Queen },
 			{ "K", CardRank.King },
